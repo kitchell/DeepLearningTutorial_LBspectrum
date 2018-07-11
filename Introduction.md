@@ -70,3 +70,6 @@ Another example: If you had five categories: `[A, B, C, D, E]`, a subject belong
 
 
 Please continue on the the [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md). Keras is the python library we will be using to create neural networks.
+
+
+Figures are from this very helpful resource: http://neuralnetworksanddeeplearning.com/
