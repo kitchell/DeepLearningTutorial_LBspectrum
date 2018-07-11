@@ -1,6 +1,6 @@
 # Tutorial for applying 'Deep Learning' neural networks to the Laplace Beltrami shape data
 
-In this tutorial we will show how to implement several different types of neural networks with the shape descriptor computed by the Laplace Beltrami operator.
+In this tutorial we will show how to implement several different types of neural networks to do classification with the shape descriptor computed by the Laplace Beltrami operator. 
 
 First we need to cover some basic information and terms.
 
@@ -15,8 +15,33 @@ Machine learning is a subfield of artificial intelligence that focuses on teachi
 
 3. <ins>Reinforcement learning</ins>: the computer is interacting with the environment and learning via feedback which behaviors generate rewards. 
 
+We will be using supervised learning for the task of classification.
 
 ### Deep learning
 
-Deep learning is a subset of machine learning methods that use artifical neural networks. It is somewhat inspired by the way the structure of the neurons of the brain. The "Deep" in deep learning refers to the multiple hidden layers of the neural networks. Deep learning has had great success with several domains, such as images, text, speech, and video. There are many differen types of neural networks. We will focus on the following:
-1. 
+Deep learning is a subset of machine learning methods that use artifical neural networks. It is somewhat inspired by the way the structure of the neurons of the brain. The "Deep" in deep learning refers to the multiple hidden layers of the neural networks. Deep learning has had great success with several domains, such as images, text, speech, and video. There are many different types of neural networks. We will focus on the following:
+1. Multilayer Perceptron
+2. Convolutional Neural Network
+
+## Perceptron
+To begin to understand neural networks we should understand what a perceptron is. A perceptron is a basic artificial neuron. It takes in multiple binary inputs and produces a single binary output. The inputs are given weights and the output is determined by whether the sum of the input weights are over or under a certain threshold. Essentially, it is a device that makes decisions by weighing all the evidence. 
+
+![alt text](http://neuralnetworksanddeeplearning.com/images/tikz0.png)
+
+Perceptrons can be combined together in layers to create a network. Each perceptron in a layer (node) weighs the evidence of the perceptrons of the previous layer. The first layer weighs the input evidence and makes a decision. The second layer weighs the results of the first layer and makes a more complex/abstract decision. and so on, until the final layer, where a final decision is made. 
+
+![alt text](http://neuralnetworksanddeeplearning.com/images/tikz1.png)
+
+The weights of the inputs of these networks are learned through learning algorithms. Nowadays, perceptrons are not really used because their inputs and outputs are binary. Instead sigmoid neurons are often used. Sigmoid neurons operate very similar to perceptrons, however they can take input values between 0 and 1 as well as give output values that are between 0 and 1. 
+
+### Structure of a Neural Network
+
+A neural network is a highly structured network that has multiple layers. The first layer is called the input layer and the final layer is called the output layer. Every layer in between is referred to as a hidden layer. Each layer is made up of multiple nodes (e.g. the perceptrons/sigmoid neurons from above). Each node of the hidden and output layers has its own classifier and the results of the classifiers are passed forward to the next layer. These multiple layer networks are often called **Multilayer Perceptrons** (although they are typically not actually using perceptrons).  
+
+![alt text](http://neuralnetworksanddeeplearning.com/images/tikz11.png)
+
+
+
+
+
+
