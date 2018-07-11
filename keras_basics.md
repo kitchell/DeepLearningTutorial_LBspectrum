@@ -4,19 +4,13 @@ Keras is a high level, very powerful, and easy to use library for deep learning 
 
 ### Useful Resources
 
-https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
-https://elitedatascience.com/keras-tutorial-deep-learning-in-python#step-7
-https://github.com/keras-team/keras/tree/master/examples
-https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/euroscipy2017/1%20Multi-layer%20Fully%20Connected%20Networks.ipynb
-http://neuralnetworksanddeeplearning.com/chap1.html
-http://www.zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf
-https://www.youtube.com/channel/UC9OeZkIwhzfv-_Cb7fCikLQ
+[Keras Sequential model guide](https://keras.io/getting-started/sequential-model-guide/)
 
 ## Models in Keras
 
 Models in Keras are defined as a sequence of layers. A Sequential model is created first and layers are added one at a time until you are happy with the topology. 
 
-### example of defined, compiled, fit and tested model (after data is preprocessed and libraries imported
+### Example of defined, compiled, fit and tested model (after data is preprocessed and libraries imported
 
 ```
 X = input_values #shape is 100 by 8
@@ -74,6 +68,10 @@ model.fit(X, Y, epochs=150, batch_size=10)
 scores = model.evaluate(X, Y)
 ```
 
+## Choices to be made when adding layers
+There are many choices to be made when adding layers. These will be discussed in the section on the different types of layers as they depend on the type of layer added. 
+
+
 ## Choices to be made when compiling
 The compiling step prepares the model to be run by the backend. For this step we need to select a few options.
 
@@ -88,4 +86,11 @@ The compiling step prepares the model to be run by the backend. For this step we
 
 3. The **metrics** we want to evaluate the model on. This is not used to train the model, but gets printed out as it trains. [Here is a list of the available metrics](https://keras.io/metrics/). The most common is:
 * accuracy
+
+## Choices to be made when fitting the model
+The fitting step trains the model on the input data. For this step we need to select a few options.
+
+1. **epochs** - this is the number of times the model is exposed to the training set. At each iteration the optimizer tries to adjust the weights so that the loss function is minimized
+
+2. **batch_size** - This is the number of training instances observed before the optimizer performs a weght update. 
 
