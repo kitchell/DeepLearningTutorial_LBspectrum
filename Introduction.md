@@ -29,12 +29,12 @@ Deep learning is a subset of machine learning methods that use artifical neural 
 ## Why use deep learning?
 Deep learning is most appropriate when there are very complex patterns in the data you want classified. In the case of the Laplace Beltrami (LB) spectrum, the data is a vector of numbers (eigenvalues) which represent the shape of an object. The more similar the vectors of objects are, the more similar the shapes of the objects are. Some simple machine learning algorithms perform well when classifying individuals based on the LB spectrum of different areas of their brain, but we are curious if neural networks will perform better as it is likely that the pattern of eigenvalues that best discriminates between subject groups is very complicated.   
 
-## Perceptron
+## Perceptrons
 To begin to understand neural networks we should understand what a perceptron is. A perceptron is a basic artificial neuron. It takes in multiple binary inputs and produces a single binary output. The inputs are given weights and the output is determined by whether the sum of the input weights are over or under a certain threshold. Essentially, it is a device that makes decisions by weighing all the evidence. 
 
 ![alt text](http://neuralnetworksanddeeplearning.com/images/tikz0.png)
 
-Perceptrons can be combined together in layers to create a network. Each perceptron in a layer (node) weighs the evidence of the perceptrons of the previous layer. The first layer weighs the input evidence and makes a decision. The second layer weighs the results of the first layer and makes a more complex/abstract decision. and so on, until the final layer, where a final decision is made. 
+Perceptrons can be combined together in layers to create a network. Each perceptron (node) in a layer weighs the evidence of the perceptrons of the previous layer. The first layer weighs the input evidence and makes a decision. The second layer weighs the results of the first layer and makes a more complex/abstract decision, and so on, until the final layer, where a final decision is made. 
 
 ![alt text](http://neuralnetworksanddeeplearning.com/images/tikz1.png)
 
