@@ -1,4 +1,5 @@
-# Tutorial for applying 'Deep Learning' neural networks to the Laplace Beltrami shape data
+# Introduction to Deep Learning
+### Tutorial for applying 'Deep Learning' neural networks to the Laplace Beltrami shape data
 
 In this tutorial we will show how to implement several different types of neural networks for classification with the shape descriptor computed by the Laplace Beltrami operator. We will be using the Keras library in Python with a Tensorflow backend.
 
@@ -68,3 +69,4 @@ One-hot encoding would change the represention from 1 and 2 to `male = [1, 0]` a
 Another example: If you had five categories: `[A, B, C, D, E]`, a subject belonging to category 'C' would be represented by `[0, 0, 1, 0, 0]`. 
 
 
+Please continue on the the [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md). Keras is the python library we will be using to create neural networks.
