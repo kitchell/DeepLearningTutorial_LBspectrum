@@ -29,9 +29,10 @@ scores = model.evaluate(X, Y)
 
 ### Defining the network structure
 
-We are going to just us fake data for now. Focus on learning the general format, details will be discussed later. Lets say we have 100 subjects and 8 variables per subject and there are 3 possible categories. You will likely want to split the data up for cross validation, but for now we will ignore that as we are only interested in learning the parts of a Keras model. Lets build a simple fully connected network structure. I will go through the above code step by step
+Lets say we have 100 subjects and 8 variables per subject and there are 3 possible categories to which the subjects belong. Lets build a simple fully connected network structure. I will go through the above code step by step
 
-1. Define the data
+1. Define the data (made up for now. Typically, you will likely want to split the data up for cross validation, but for now we will ignore that as we are only interested in learning the general parts of a Keras model.)
+
 ```
 X = input_values #shape is 100 by 8
 Y = input_categories #shape is 100 by 3 (one-hot encoding)
