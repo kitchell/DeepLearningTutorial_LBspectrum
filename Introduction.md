@@ -23,7 +23,7 @@ Deep learning is a subset of machine learning methods that use artifical neural 
 1. Multilayer Perceptron
 2. Convolutional Neural Network
 
-### Perceptron
+## Perceptron
 To begin to understand neural networks we should understand what a perceptron is. A perceptron is a basic artificial neuron. It takes in multiple binary inputs and produces a single binary output. The inputs are given weights and the output is determined by whether the sum of the input weights are over or under a certain threshold. Essentially, it is a device that makes decisions by weighing all the evidence. 
 
 ![alt text](http://neuralnetworksanddeeplearning.com/images/tikz0.png)
@@ -32,26 +32,26 @@ Perceptrons can be combined together in layers to create a network. Each percept
 
 ![alt text](http://neuralnetworksanddeeplearning.com/images/tikz1.png)
 
-The weights of the inputs of these networks are learned through learning algorithms. Nowadays, perceptrons are not really used because their inputs and outputs are binary. Instead sigmoid neurons or other more powerful classifiers are often used. Sigmoid neurons operate very similar to perceptrons, however they can take input values between 0 and 1 as well as give output values that are between 0 and 1. 
+The weights of the inputs of these networks are learned through learning algorithms that minimize the errors in the final output. Nowadays, perceptrons are not really used because their inputs and outputs are binary. Instead sigmoid neurons or other more powerful activation functions like ReLU are often used. Sigmoid neurons operate very similar to perceptrons, however they can take input values between 0 and 1 as well as give output values that are between 0 and 1. More on this later.
 
-### Structure of a Neural Network
+## Structure of a Neural Network
 
 A neural network is a highly structured network that has multiple layers. The first layer is called the input layer and the final layer is called the output layer. Every layer in between is referred to as a hidden layer. Each layer is made up of multiple nodes (e.g. the perceptrons/sigmoid neurons from above). Each node of the hidden and output layers has its own classifier and the results of the classifiers are passed forward to the next layer. These multiple layer networks are often called **Multi-layer Perceptrons** (although they are typically not actually using perceptrons). Neural networks like these, where the output from one layer is the input for another, are called **feedforward** or **forward propagation** networks. There are neural networks, called **Recurrent networks**, where feedback loops can be used and information is not only fed forward, however these are less popular and will not be used in this tutorial.
 
 ![alt text](http://neuralnetworksanddeeplearning.com/images/tikz11.png)
 
-## Input layer
+### Input layer
 
 The number of nodes in the input layer is determined by the number of inputs. For example, a 28 by 28 pixel image would have one input node for each pixel. There are 784 pixels in that image, so there would be 784 input nodes. 
 
-## Output layer
+### Output layer
 
 The number of nodes in the output layer is determined by the number of categories the inputs are being classified into. If it is a binary classification (2 options), the output layer has 2 nodes. If there a are 5 possibly outputs, there are 5 nodes. 
 
-## Hidden layers
+### Hidden layers
 
 The number of nodes in the hidden layers is chosen by the user. It is best to try different amounts of nodes and see how that changes the outcome. 
 
-
-
+## Why use deep learning?
+Deep learning is most appropriate when there are very complex patterns in the data you want classified. In the case of the Laplace Beltrami (LB) spectrum, the data is a vector of numbers (eigenvalues) whose combination represent the shape of an object. The more similar the vectors of objects are, the more similar the shape of the objects is. Some simple machine learning algorithms perform well when classifying individuals based on the LB spectrum of different areas of their brain, but we are curious if neural networks will perform better.   
 
