@@ -3,8 +3,8 @@ Tutorial for combining "Deep Learning" and the Laplace Beltrami spectrum. It is 
 
 # Start Here
 Here is the order to read the included documents in:
-[Introduction to Deep Learning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Introduction.md)
-[Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md)
+1. [Introduction to Deep Learning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Introduction.md)
+2. [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md)
 
 
 # Useful Resources
