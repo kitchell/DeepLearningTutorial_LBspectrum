@@ -69,9 +69,17 @@ model.fit(X, Y, epochs=150, batch_size=10)
 scores = model.evaluate(X, Y)
 ```
 
-## Choices to be made when adding layers
-There are many choices to be made when adding layers. These will be discussed in the section on the different types of layers as they depend on the type of layer added. 
+## Choices to be made when adding layers (models)
+1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/). The layers we will be interested in are as follows:
 
+* **Dense** layer - a dense layer is a fully connected neural network layer
+* **Conv1D** layer - a 1 dimensional convolutional layer 
+* **Conv2D** layer - a 2 dimensional convolutional layer
+* **MaxPooling1D** layer - a 1 dimensional pooling layer
+* **MaxPooling2D** layer - a 2 dimensional pooling layer
+* **Dropout** layer - Dropout consists of randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
+
+2. The **activation function**.   
 
 ## Choices to be made when compiling
 The compiling step prepares the model to be run by the backend. For this step we need to select a few options.
@@ -82,8 +90,9 @@ The compiling step prepares the model to be run by the backend. For this step we
 * categorical_crossentropy - for multi category label predictions
 
 2. The **optimizer** algorithm that will be used to update the weights of the network. [Here is a list of the available optimizers](https://keras.io/optimizers/). The most common are:
-* sgd - stochastic gradient descent
-* adam - default 
+* sgd - stochastic gradient descent, a fast variant of gradient descent
+* RMSprop - more advanced, includes a concept of momentum
+* adam - default, more advanced, includes a concept of momentum
 
 3. The **metrics** we want to evaluate the model on. This is not used to train the model, but gets printed out as it trains. [Here is a list of the available metrics](https://keras.io/metrics/). The most common is:
 * accuracy
