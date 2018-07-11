@@ -1,10 +1,10 @@
 # DeepLearningTutorial_LBspectrum
-Tutorial for combining "Deep Learning" and the Laplace Beltrami spectrum. It is recommended that you have experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful.
+Tutorial for combining "Deep Learning" and the Laplace Beltrami spectrum. It is recommended that you have experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful. The tutorial will be applicable beyond the Laplace Beltrami spectrum, but the data used will focus on it. 
 
 # Start Here
 Here is the order to read the included documents in:
-[Introduction to Deep Learning]()
-[Introduction to Keras]()
+[Introduction to Deep Learning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Introduction.md)
+[Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md)
 
 
 # Useful Resources
