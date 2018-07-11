@@ -10,7 +10,7 @@ Keras is a high level, very powerful, and easy to use library for deep learning 
 
 Models in Keras are defined as a sequence of layers. A Sequential model is created first and layers are added one at a time until you are happy with the topology. 
 
-### Example of defined, compiled, fit and tested model (after data is preprocessed and libraries imported
+### Example of defined, compiled, fit and tested model (after data is preprocessed and libraries imported)
 
 ```
 X = input_values #shape is 100 by 8
