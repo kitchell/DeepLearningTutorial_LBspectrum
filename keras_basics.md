@@ -79,7 +79,11 @@ scores = model.evaluate(X, Y)
 * **MaxPooling2D** layer - a 2 dimensional pooling layer
 * **Dropout** layer - Dropout consists of randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
 
-2. The **activation function**.   
+2. The **activation function**. The activation function is what decides whether or not a neuron/node should be activated. The most populare ones are:
+* **Linear**
+* **Sigmoid**
+* **Tanh** - hyperbolic tangent
+* **ReLU** 
 
 ## Choices to be made when compiling
 The compiling step prepares the model to be run by the backend. For this step we need to select a few options.
