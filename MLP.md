@@ -1,3 +1,114 @@
 # Multi-Layer Perceptrons: Fully Connected Neural Networks
 
-A multi-layer perceptron (MLP) is a fully connected neural network, meaning that each node connects to all possible nodes in the surrounding layers. To create a MLP or fully connected neural network in Keras, you will need to use the Dense layer. The Keras documentation on the Dense layer can be found [here] (https://keras.io/layers/core/). 
+A multi-layer perceptron (MLP) is a fully connected neural network, meaning that each node connects to all possible nodes in the surrounding layers. The general format of the MLP has already been described in the last two pages. Here we will focus on how to create them using Keras. We will go through two examples given in the Keras documentation. These examples can be found [here](https://keras.io/getting-started/sequential-model-guide/).
+
+### Dense Layer
+
+To create a MLP or fully connected neural network in Keras, you will need to use the **Dense** layer. The Keras documentation on the Dense layer can be found [here](https://keras.io/layers/core/). A **Dense** layer is a fully connected layer. 
+
+```python
+keras.layers.Dense(units, activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)
+```
+The arguments we care about for the dense layer:
+* units - Number of nodes in the hidden layer
+* activation - activation function to use
+
+Please see the Keras documentation for information on the others. 
+
+### Dropout Layer
+
+You may also need a **Dropout** layer. A **Dropout** layer helps prevent overfitting of the data. It randomly sets a fraction (defined by the user) of the input to 0 at each update during training. [Keras documenation on Dropout](https://keras.io/layers/core/#dropout) and [detailed information on Dropout](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf).
+
+```python
+keras.layers.Dropout(rate, noise_shape=None, seed=None)
+```
+The argument we care about for the dropout layer:
+* rate - the fraction of the input units to drop
+
+Please see the Keras documentation for information on the others.
+
+## MLP for binary classification
+
+Here is all of the code for a simple binary classification MLP example. We will go through it below.
+
+```python
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+
+# Generate dummy data
+x_train = np.random.random((1000, 20))
+y_train = np.random.randint(2, size=(1000, 1))
+x_test = np.random.random((100, 20))
+y_test = np.random.randint(2, size=(100, 1))
+
+model = Sequential()
+model.add(Dense(64, input_dim=20, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+
+model.fit(x_train, y_train,
+          epochs=20,
+          batch_size=128)
+score = model.evaluate(x_test, y_test, batch_size=128)
+```
+
+1. Import the libraries needed for the script
+```python
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+```
+2. Create some data to use for the example
+```python
+x_train = np.random.random((1000, 20))
+y_train = np.random.randint(2, size=(1000, 1))
+x_test = np.random.random((100, 20))
+y_test = np.random.randint(2, size=(100, 1))
+```
+3. Define the type of model (Sequential)
+```python
+model = Sequential()
+```
+4. Add the first layer. Since this is an input layer we need to add an aditional argument (input_dim). This is a dense layer will 64 nodes. The data we are inputting has 20 values per input, so we tell it that the input dimension is 20. We also set the activation function to be 'relu'. 
+```python
+model.add(Dense(64, input_dim=20, activation='relu'))
+```
+5. Add a dropout layer to prevent overfitting. We have set the layer to drop 50% of the input.
+```python
+model.add(Dropout(0.5))
+```
+6. Add another hidden dense layer. This layer also has 64 nodes and uses the relu activation function. 
+```python
+model.add(Dense(64, activation='relu'))
+```
+7. Add another dropout layer, 50% rate again.
+```python
+model.add(Dropout(0.5))
+```
+8. Add the output layer. This is a dense layer with 1 node. It is one node because this is a binary classification problem, the output is either 1 or 0. The activation function used is sigmoid. Sigmoid is the most appropriate function to use for a binary classification problem because it forces the output to be between 0 and 1, making it easy to set a threshold (i.e. .5) for classification. 
+```python
+model.add(Dense(1, activation='sigmoid'))
+```
+9. Compile the model. Because this is a binary classification problem, we use the loss function 'binary_crossentropy'. The optimizer chosen is 'rmsprop' and we want it to output the accuracy metric. 
+```python
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+```
+10. Fit the model. This is what actually trains the model. We give it the input (training data) x_train and y_train. We ask it to run the training 20 times and use a batch size of 128. This means it will see 128 inputs before updating the weights. 
+```python
+model.fit(x_train, y_train,
+          epochs=20,
+          batch_size=128)
+```
+11. Last step is to check the accuracy of the model on some testing data that was kept out of training. 
+```python
+score = model.evaluate(x_test, y_test, batch_size=128)
+```
