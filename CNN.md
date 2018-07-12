@@ -23,7 +23,7 @@ The convolution of the filter across the image would look like this:
 
 ![image](https://ujwlkarn.files.wordpress.com/2016/07/convolution_schematic.gif?w=268&h=196)
 
-The filter is slid across the image by 1 pixel. At every position, the filter is first multiplied elementwise with the pixels of the image and then the resulting values are summed up to get a final integer which is then a single element of the output matrix (feature map). Different values in the filter will create a different output feature map. 
+The filter is slid across the image by 1 pixel. At every position, the filter is first multiplied elementwise with the pixels of the image and then the resulting values are summed up to get a final integer which is then a single element of the output matrix (feature map). Different values in the filter will create a different output feature map. [Here is the keras documentation for convolutional layers](https://keras.io/layers/convolutional/) 
 
 Here is a helpful graphic that shows the result of two different filters being convolved across an image:
 
@@ -62,7 +62,7 @@ The function of a pooling layer is to do dimensionality reduction on the convolu
 
 Two types of pooling layers are Max and Average. Max pooling will take the largest number in a defined spatial neighborhood. Average pooling will take the average value of the spatial neighborhood. Max pooling is the type of pooling typically used, as it has been found to perform better. 
 
-There are also Global versions of both of these types of pooling. Global (average or max) pooling is a more extreme method of dimensionality reduction, it averages the input into one value per feature map. A Global pooling layer is often added towards the end of a model, right before the Dense output layer. 
+There are also Global versions of both of these types of pooling. Global (average or max) pooling is a more extreme method of dimensionality reduction, it averages the input into one value per feature map. A Global pooling layer is often added towards the end of a model, right before the Dense output layer. [Here is the keras documentation on Pooling layers](https://keras.io/layers/pooling/).
 
 Here's an example of how the Max and Sum (another type of pooling) layers look:
 
@@ -89,4 +89,92 @@ The argument we care about is:
 
 Note that the Global pooling layers do not have any input functions (except data_format for the 2D ones).
 
+Please see the Keras documentation for arguments not covered here. 
+
+Now we will cover an example provided by the Keras documentation for the creation of a 1D CNN. The example can be found [here](https://keras.io/getting-started/sequential-model-guide/).
+
+## 1D Convolution example
+
+Here is the code for a complete example of a 1D CNN. We will go through it below. 
+```python
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.layers import Embedding
+from keras.layers import Conv1D, GlobalAveragePooling1D, MaxPooling1D
+
+seq_length = 64
+
+model = Sequential()
+model.add(Conv1D(64, 3, activation='relu', input_shape=(seq_length, 100)))
+model.add(Conv1D(64, 3, activation='relu'))
+model.add(MaxPooling1D(3))
+model.add(Conv1D(128, 3, activation='relu'))
+model.add(Conv1D(128, 3, activation='relu'))
+model.add(GlobalAveragePooling1D())
+model.add(Dropout(0.5))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+
+model.fit(x_train, y_train, batch_size=16, epochs=10)
+score = model.evaluate(x_test, y_test, batch_size=16)
+```
+
+1. Import the needed libraries.
+```python
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.layers import Conv1D, GlobalAveragePooling1D, MaxPooling1D
+```
+
+2. Define the type of model and a variable for the length of the input data. This is an example for 1 dimensional sequence classification so it is referred to as sequence length.
+```python
+seq_length = 64
+model = Sequential()
+```
+3. Add the first layer. This is a 1D convolutional layer. This layer is using 64 filters (kernels) and a kernel size of 3. We set the activation function we want to apply after the convolution to 'relu' - this defines the ReLU layer. Because it is the first layer we have to define the input shape of the data, this can be a little tricky. The 1D conv function was designed to work with sequential data, so the order of the values can be confusing. The first number represents the number of 'time steps' you have, in this case 64. The second number represents the number of features you have measures for for each time step, in this case 100. When you have a single vector of data per input (e.g. an LB spectrum with 50 eigenvalues), you likely want this shape to be (50, 1).
+```python
+model.add(Conv1D(64, 3, activation='relu', input_shape=(seq_length, 100)))
+```
+4. Add another 1D convolutional layer with 64 filters and a kernal size of 3. Add a Relu activation layer after it.
+```python
+model.add(Conv1D(64, 3, activation='relu'))
+```
+5. Add a Max pooling layer with a 'window' of size 3 to do dimensionality reduction
+```python
+model.add(MaxPooling1D(3))
+```
+6. Add another 2 1D convolutional layers, both with 128 filters and both with ReLU activation layers after. 
+```python
+model.add(Conv1D(128, 3, activation='relu'))
+model.add(Conv1D(128, 3, activation='relu'))
+```
+7. Add a Global average pooling layer to do more dimensionality reduction.
+```python
+model.add(GlobalAveragePooling1D())
+```
+8. Add a dropout layer to prevent overfitting.
+```python
+model.add(Dropout(0.5))
+```
+9. Add the output layer. This layer is a Dense (fully connected) layer. It only has 1 node as this is a binary classification model. The activation function used is sigmoid. Sigmoid is the most appropriate function to use for a binary classification problem because it forces the output to be between 0 and 1, making it easy to set a threshold (i.e. .5) for classification.
+```python
+model.add(Dense(1, activation='sigmoid'))
+```
+10. Compile the model. Because this is a binary classification model we use the loss function 'binary_crossentropy'. The optimizer chosen is 'rmsprop' and we want it to output the accuracy metric.
+```python
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+```
+11. Fit the model. This is what actually trains the model. We give it the input (training data) x_train and y_train. We ask it to run the training 10 times (epoch) and use a batch size of 16. This means it will see 16 inputs before updating the weights.
+```python
+model.fit(x_train, y_train, batch_size=16, epochs=10)
+```
+12. Last step is to check the accuracy of the model on some testing data that was kept out of training.
+```python
+score = model.evaluate(x_test, y_test, batch_size=16)
+```
 
