@@ -1,6 +1,6 @@
 # Convolutional Neural Networks
 
-A Convolutiona Neural Network (CNN) is a specific type of feed-forward deep network. CNNs are inspired by the visual cortex of the brain. Some of the individual neurons of the visual cortex are activated only when edges of a particular orientation (e.g. vertical, horizontal) are viewed. These neurons are ordered together in a column and combine together to produce visual perception. Essentially, it is the idea that individual components of a system are specialized for specific tasks. 
+A Convolutional Neural Network (CNN) is a specific type of feed-forward deep network. CNNs are inspired by the visual cortex of the brain. Some of the individual neurons of the visual cortex are activated only when edges of a particular orientation (e.g. vertical, horizontal) are viewed. These neurons are ordered together in a column and combine together to produce visual perception. Essentially, it is the idea that individual components of a system are specialized for specific tasks. 
 
 [This video gives a great, easy to understand, explanation of CNNs](https://www.youtube.com/watch?v=JiN9p5vWHDY&list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu&index=8). 
 
@@ -10,12 +10,12 @@ A Convolutiona Neural Network (CNN) is a specific type of feed-forward deep netw
 
 [As is this course on Kaggle](https://www.kaggle.com/dansbecker/intro-to-deep-learning-and-computer-vision)
 
-A CNN has three types of layers: convolutional layers, activation (relu) layers, and pooling layers. In Keras, the convolution and activation layers can be added at the same time. Many of the explanations will use images as an example, as that is the typically use for a CNN, but in the end we will actually be using the LB spectrum. 
+A CNN has three types of layers: convolutional layers, activation (relu) layers, and pooling layers. In Keras, the convolution and activation layers can be added at the same time. CNNs are typically used for images. 
 
 ## Convolutional Layer
 The convolutional layer is the part of the CNN that does the 'heavy lifting'. It consists of a series of learnable filters (kernels). Each filter is set to a certain small size (e.g. 3x3 for a 2D BW image, or 1x3 for a 1D vector). During the pass through the layer, the filter is slid (convolved) across the width and height of the input. As the filter is slid, an activation or feature map is produced that gives the response of the filter at every spatial position. The network will learn filters that activate when they see a specific feature, such as edges if the input is an image. Each convolutional layer has multiple filters and each filter produces a separate activation or feature map. These activation maps are stacked together and passed to the next layer. 
 
-For example, consider a 5 by 5 image (gree) which only has values 0 or 1 and a 3 by 3 filter (yellow):  
+For example, consider a 5 by 5 image (green) which only has values 0 or 1 and a 3 by 3 filter (yellow):  
 
 ![image](https://ujwlkarn.files.wordpress.com/2016/07/screen-shot-2016-07-24-at-11-25-13-pm.png?w=127&h=115)  ![filter](https://ujwlkarn.files.wordpress.com/2016/07/screen-shot-2016-07-24-at-11-25-24-pm.png?w=74&h=64)
 
@@ -68,6 +68,25 @@ Here's an example of how the Max and Sum (another type of pooling) layers look:
 
 ![](https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-07-at-6-11-53-pm.png?w=748)
 
+In Keras pooling layers are added with the following functions:
+```python
+keras.layers.MaxPooling1D(pool_size=2, strides=None, padding='valid')
+keras.layers.MaxPooling2D(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+keras.layers.AveragePooling1D(pool_size=2, strides=None, padding='valid')
+keras.layers.AveragePooling2D(pool_size=(2, 2), strides=None, padding='valid', data_format=None)
+```
 
+Global Pooling layers:
+```python
+keras.layers.GlobalMaxPooling1D()
+keras.layers.GlobalAveragePooling1D()
+keras.layers.GlobalMaxPooling2D(data_format=None)
+keras.layers.GlobalAveragePooling2D(data_format=None)
+```
+
+The argument we care about is:
+* pool_size - size of the window to 'summarize'
+
+Note that the Global pooling layers do not have any input functions (except data_format for the 2D ones).
 
 
