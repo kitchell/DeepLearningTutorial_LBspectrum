@@ -178,3 +178,5 @@ model.fit(x_train, y_train, batch_size=16, epochs=10)
 score = model.evaluate(x_test, y_test, batch_size=16)
 ```
 
+That's it! You now know the basics of a CNN in Keras. A 2D CNN, such as for pictures, can have the same format. You would just use the 2D version of the functions and adjust the kernal size to be two dimensions etc. 
+
