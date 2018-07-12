@@ -4,7 +4,7 @@ A Convolutiona Neural Network (CNN) is a specific type of feed-forward deep netw
 
 [This video gives a great, easy to understand, explanation of CNNs](https://www.youtube.com/watch?v=JiN9p5vWHDY&list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu&index=8). 
 
-[Very useful resource](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/)
+[Very useful resource and source of the images used below](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/)
 
 [This is also a very helpful resource](http://cs231n.github.io/convolutional-networks/)
 
@@ -23,7 +23,7 @@ The convolution of the filter across the image would look like this:
 
 ![image](https://ujwlkarn.files.wordpress.com/2016/07/convolution_schematic.gif?w=268&h=196)
 
-The filter is slide across the image by 1 pixel. At every position, the filter is first multiplied elementwise with the pixels of the image and then the resulting values are summed up to get a final integer which is then a single element of the output matrix (feature map). Different values in the filter will create a different output feature map. 
+The filter is slid across the image by 1 pixel. At every position, the filter is first multiplied elementwise with the pixels of the image and then the resulting values are summed up to get a final integer which is then a single element of the output matrix (feature map). Different values in the filter will create a different output feature map. 
 
 Here is a helpful graphic that shows the result of two different filters being convolved across an image:
 
@@ -57,3 +57,5 @@ Other activation functions can be used besides ReLU, but ReLU has been found to 
 
 
 ## Pooling Layer
+
+
