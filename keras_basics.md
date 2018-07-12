@@ -79,14 +79,15 @@ scores = model.evaluate(X, Y)
 * **MaxPooling2D** layer - a 2 dimensional pooling layer
 * **Dropout** layer - Dropout consists of randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
 
-2. The **activation function**. The activation function is what decides whether or not a neuron/node should be activated. The most populare ones are:
-* **Linear**
-* **Sigmoid**
+2. The **activation function**. The activation function is what decides whether or not a neuron/node should be activated. [Here are the available activation functions](https://keras.io/activations/) The most populare ones are:
+* **linear**
+* **sigmoid**
+* **softmax**
 * **Tanh** - hyperbolic tangent
-* **ReLU** 
+* **relu** 
 
 ## Choices to be made when compiling
-The compiling step prepares the model to be run by the backend. For this step we need to select a few options.
+The compiling step prepares the model to be run by the backend. For this step we need to select a few options. [Keras documentation on compile](https://keras.io/models/model/)
 
 1. The **loss or cost function.** We need to select the function that is used by the optimizer to optimize the weights. [Here is a list of the available loss functions](https://keras.io/losses/). The most common are:
 * mean_squared_error 
@@ -102,7 +103,7 @@ The compiling step prepares the model to be run by the backend. For this step we
 * accuracy
 
 ## Choices to be made when fitting the model
-The fitting step trains the model on the input data. For this step we need to select a few options.
+The fitting step trains the model on the input data. For this step we need to select a few options. [Keras documentation on fit](https://keras.io/models/model/)
 
 1. **epochs** - this is the number of times the model is exposed to the training set. At each iteration the optimizer tries to adjust the weights so that the loss function is minimized
 
