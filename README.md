@@ -6,7 +6,7 @@ Here is the order to read the included documents in:
 1. [Introduction to Deep Learning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Introduction.md)
 2. [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md)
 3. [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md)
-4. Convolutional Neural Networks in Keras
+4. [Convolutional Neural Networks in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/CNN.md)
 
 # Useful Resources
 The following links were very helpful in the creation of this tutorial
