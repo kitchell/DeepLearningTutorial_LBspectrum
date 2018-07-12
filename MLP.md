@@ -112,3 +112,86 @@ model.fit(x_train, y_train,
 ```python
 score = model.evaluate(x_test, y_test, batch_size=128)
 ```
+
+## MLP for multi-class classification
+
+Here is all of the code for a multi-class classification example. We will go through it below.
+```python
+import keras
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation
+from keras.optimizers import SGD
+import numpy as np
+
+# Generate dummy data
+x_train = np.random.random((1000, 20))
+y_train = keras.utils.to_categorical(np.random.randint(10, size=(1000, 1)), num_classes=10)
+x_test = np.random.random((100, 20))
+y_test = keras.utils.to_categorical(np.random.randint(10, size=(100, 1)), num_classes=10)
+
+model = Sequential()
+# Dense(64) is a fully-connected layer with 64 hidden units.
+# in the first layer, you must specify the expected input data shape:
+# here, 20-dimensional vectors.
+model.add(Dense(64, activation='relu', input_dim=20))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(10, activation='softmax'))
+
+sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy',
+              optimizer=sgd,
+              metrics=['accuracy'])
+
+model.fit(x_train, y_train,
+          epochs=20,
+          batch_size=128)
+score = model.evaluate(x_test, y_test, batch_size=128)
+```
+
+1. Input the necessary libraries
+```python
+import keras
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation
+from keras.optimizers import SGD
+import numpy as np
+```
+2. Create some data to use for the example.
+```python
+x_train = np.random.random((1000, 20))
+y_train = keras.utils.to_categorical(np.random.randint(10, size=(1000, 1)), num_classes=10)
+x_test = np.random.random((100, 20))
+y_test = keras.utils.to_categorical(np.random.randint(10, size=(100, 1)), num_classes=10)
+```
+3. Define the type of model (Sequential) and add the hidden layers. These hidden layers are the exact same as above so I will not go through them one on one again.
+```python
+model = Sequential()
+model.add(Dense(64, activation='relu', input_dim=20))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+```
+4. Add the output layer. Here is where it is different from the binary classification MLP. We have 10 possible classification categories, so we need 10 nodes for the output layer. We also use the softmax activation function. This is the best one to use for multi-class classification as softmax assigns decimal probabilities to each class in a multi-class problem. Those decimal probabilities must add up to 1.0 and this additional constraint helps training converge more quickly than it otherwise would.
+```python
+model.add(Dense(10, activation='softmax'))
+```
+5. Compile the model. In this example, we are using stochastic gradient descent (SGD,sgd) for the optimizer. The first line below allows us to cutomize agruments for the optimizer. We use the categorical_crossentropy loss function because it is a multi-class classification network. 
+```python
+sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy',
+              optimizer=sgd,
+              metrics=['accuracy'])
+```
+6. Fit the model. We fit the model using the training data and 20 rounds of training.
+```python
+model.fit(x_train, y_train,
+          epochs=20,
+          batch_size=128)
+```
+7. Evaluate the model. Finally, we test the accuracy of the model using testing data we kept out of the training.
+```python
+score = model.evaluate(x_test, y_test, batch_size=128)
+```
+
