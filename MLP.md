@@ -17,7 +17,7 @@ Please see the Keras documentation for information on the others.
 
 ### Dropout Layer
 
-You may also need a **Dropout** layer. A **Dropout** layer helps prevent overfitting of the data. It randomly sets a fraction (defined by the user) of the input to 0 at each update during training. [Keras documenation on Dropout](https://keras.io/layers/core/#dropout) and [detailed information on Dropout](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf).
+You may also need a **Dropout** layer. A **Dropout** layer helps prevent overfitting of the data. It randomly sets a fraction (defined by the user) of the input to 0 at each update during training. [Keras documenation on Dropout](https://keras.io/layers/core/#dropout) and [detailed information on Dropout](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf). Dropout layers are not required, however they are helpful. 
 
 ```python
 keras.layers.Dropout(rate, noise_shape=None, seed=None)
@@ -195,3 +195,4 @@ model.fit(x_train, y_train,
 score = model.evaluate(x_test, y_test, batch_size=128)
 ```
 
+That's it! You now know the basic requirements of an MLP in Keras. Essentially, you need a dense input layer, some dense hidden layers (with or without dropout), and a dense output layer. 
