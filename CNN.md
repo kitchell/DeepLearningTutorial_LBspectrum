@@ -58,4 +58,16 @@ Other activation functions can be used besides ReLU, but ReLU has been found to 
 
 ## Pooling Layer
 
+The function of a pooling layer is to do dimensionality reduction on the convolution layer output. This helps reduce the amount of computation necessary, as well as prevent overfitting. It is common to insert a pooling layer after several convolutional layers. 
+
+Two types of pooling layers are Max and Average. Max pooling will take the largest number in a defined spatial neighborhood. Average pooling will take the average value of the spatial neighborhood. Max pooling is the type of pooling typically used, as it has been found to perform better. 
+
+There are also Global versions of both of these types of pooling. Global (average or max) pooling is a more extreme method of dimensionality reduction, it averages the input into one value per feature map. A Global pooling layer is often added towards the end of a model, right before the Dense output layer. 
+
+Here's an example of how the Max and Sum (another type of pooling) layers look:
+
+![](https://ujwlkarn.files.wordpress.com/2016/08/screen-shot-2016-08-07-at-6-11-53-pm.png?w=748)
+
+
+
 
