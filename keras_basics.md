@@ -109,3 +109,4 @@ The fitting step trains the model on the input data. For this step we need to se
 
 2. **batch_size** - This is the number of training instances observed before the optimizer performs a weght update. 
 
+Please continue on to [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md).
