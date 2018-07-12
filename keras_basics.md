@@ -80,11 +80,11 @@ scores = model.evaluate(X, Y)
 * **Dropout** layer - Dropout consists of randomly setting a fraction rate of input units to 0 at each update during training time, which helps prevent overfitting.
 
 2. The **activation function**. The activation function is what decides whether or not a neuron/node should be activated. [Here are the available activation functions](https://keras.io/activations/) The most popular ones are:
-* **linear**
-* **sigmoid**
-* **softmax**
+* **linear** - default
+* **sigmoid** - best with binary classification
+* **softmax** - best with multi-class classification
 * **Tanh** - hyperbolic tangent
-* **relu** 
+* **relu** - most popular
 
 ## Choices to be made when compiling
 The compiling step prepares the model to be run by the backend. For this step we need to select a few options. [Keras documentation on compile](https://keras.io/models/model/)
