@@ -22,7 +22,7 @@ We will be using supervised learning for the task of classification.
 
 Deep learning is a subset of machine learning methods that use artifical neural networks. It is somewhat inspired by the structure of the neurons of the brain. The "Deep" in deep learning refers to the multiple hidden layers of the neural networks. Deep learning has had great success with several domains, such as images, text, speech, and video. There are many different types of neural networks. We will focus on the following:
 
-1. Multilayer Perceptron
+1. Multi-layer Perceptron (Fully connected network)
 2. Convolutional Neural Network
 
 
