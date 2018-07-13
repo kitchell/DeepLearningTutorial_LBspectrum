@@ -120,6 +120,17 @@ keras.callbacks.CSVLogger(filename, separator=',', append=False)
 ```
 The CSV logger streams the epoch results to a csv file. 
 
+## Other functions
+
+### Batch noramlization
+
+from keras.layers.normalization import BatchNormalization
+
+BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, 
+                   beta_initializer='zeros', gamma_initializer='ones', moving_mean_initializer='zeros',
+                   moving_variance_initializer='ones', beta_regularizer=None, gamma_regularizer=None,
+                   beta_constraint=None, gamma_constraint=None)
+
 
 ## Tips
 
@@ -133,3 +144,4 @@ history = model.fit(X_train, Y_train, validation_data=(X_val, Y_val))
 ```
 
 [View the hidden representations](https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london2017/2.1%20Hidden%20Layer%20Representation%20and%20Embeddings.ipynb) (scroll down to end)
+
