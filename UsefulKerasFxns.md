@@ -45,6 +45,38 @@ model.fit(X_train, Y_train, validation_data = (X_val, Y_val), epochs=50,
 
 [Keras Documentation on Callback functions](https://keras.io/callbacks/)
 
+### Model History
+```python
+keras.callbacks.History()
+
+# list all data in history
+history = model.fit(...)
+print(history.history.keys())
+```
+By default, the fit function returns the entire history of training/validation loss and accuracy, for each epoch. We can therefore plot the behaviour of loss and accuracy during the training phase:
+```python
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+def plot_history(network_history):
+    plt.figure()
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.plot(network_history.history['loss'])
+    plt.plot(network_history.history['val_loss'])
+    plt.legend(['Training', 'Validation'])
+
+    plt.figure()
+    plt.xlabel('Epochs')
+    plt.ylabel('Accuracy')
+    plt.plot(network_history.history['acc'])
+    plt.plot(network_history.history['val_acc'])
+    plt.legend(['Training', 'Validation'], loc='lower right')
+    plt.show()
+
+plot_history(network_history)
+```
+
 ### Early Stopping
 
 ```python
@@ -61,6 +93,7 @@ keras.callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=0, save_be
 
 #save the best model
 best_model = ModelCheckpoint(fBestModel, verbose=0, save_best_only=True)
+best_model = ModelCheckpoint(fBestModel, monitor='val_acc', save_best_only=True, mode='max')
 ```
 The model checkpoint callback stores the model after every epoch. It can also be set to save the the best model found during the epochs. 
 
@@ -76,3 +109,9 @@ The tensorboard callback writes a log for use with the [TensorBoard visualizatio
 keras.callbacks.CSVLogger(filename, separator=',', append=False)
 ```
 The CSV logger streams the epoch results to a csv file. 
+
+
+## Tips
+You can save 
+network_history = model.fit(X_train, Y_train, batch_size=128, 
+                            epochs=2, verbose=1, validation_data=(X_val, Y_val))
