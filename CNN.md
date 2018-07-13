@@ -10,7 +10,13 @@ A Convolutional Neural Network (CNN) is a specific type of feed-forward deep net
 
 [As is this course on Kaggle](https://www.kaggle.com/dansbecker/intro-to-deep-learning-and-computer-vision)
 
-A CNN has three types of layers: convolutional layers, activation (relu) layers, and pooling layers. In Keras, the convolution and activation layers can be added at the same time. CNNs are typically used for images. 
+[Useful python notebook](https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london2017/3.%20Convolutional%20Neural%20Networks.ipynb)
+
+A CNN has three types of layers: convolutional layers, activation (relu) layers, and pooling layers. In Keras, the convolution and activation layers can be added at the same time. CNNs are typically used for images.
+
+Here is a typical CNN model architecture:
+
+![](https://camo.githubusercontent.com/b4c81c8d9f2915637d0ed7e40eae2837e38178c4/68747470733a2f2f616465736870616e6465332e6769746875622e696f2f6173736574732f5461626c652e706e67)
 
 ## Convolutional Layer
 The convolutional layer is the part of the CNN that does the 'heavy lifting'. It consists of a series of learnable filters (kernels). Each filter is set to a certain small size (e.g. 3x3 for a 2D BW image, or 1x3 for a 1D vector). During the pass through the layer, the filter is slid (convolved) across the width and height of the input. As the filter is slid, an activation or feature map is produced that gives the response of the filter at every spatial position. The network will learn filters that activate when they see a specific feature, such as edges if the input is an image. Each convolutional layer has multiple filters and each filter produces a separate activation or feature map. These activation maps are stacked together and passed to the next layer. 
