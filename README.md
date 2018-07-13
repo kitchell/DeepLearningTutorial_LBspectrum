@@ -12,6 +12,7 @@ Here is the order to read the included documents in:
 # Useful Resources
 The following links were very helpful in the creation of this tutorial
 
+* https://github.com/leriomaggio/deep-learning-keras-tensorflow/tree/pydata-london2017
 * https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
 * https://elitedatascience.com/keras-tutorial-deep-learning-in-python#step-7
 * https://github.com/keras-team/keras/tree/master/examples
