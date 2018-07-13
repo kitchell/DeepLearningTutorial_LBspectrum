@@ -180,4 +180,4 @@ score = model.evaluate(x_test, y_test, batch_size=16)
 
 That's it! You now know the basics of a CNN in Keras. A 2D CNN, such as for pictures, can have the same format. You would just use the 2D version of the functions and adjust the kernal size to be two dimensions etc. 
 
-Please move on to [Activation Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/ActivationFxns.md).
+Please continue on to [Activation Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/ActivationFxns.md).
