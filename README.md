@@ -20,3 +20,5 @@ The following links were very helpful in the creation of this tutorial
 * http://neuralnetworksanddeeplearning.com/chap1.html
 * http://www.zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf
 * https://www.youtube.com/channel/UC9OeZkIwhzfv-_Cb7fCikLQ
+* https://machinelearningmastery.com/applied-deep-learning-in-python-mini-course/
+
