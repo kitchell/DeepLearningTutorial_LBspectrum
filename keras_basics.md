@@ -96,8 +96,8 @@ The compiling step prepares the model to be run by the backend. For this step we
 
 2. The **optimizer** algorithm that will be used to update the weights of the network. [Here is a list of the available optimizers](https://keras.io/optimizers/). The most common are:
 * sgd - stochastic gradient descent, a fast variant of gradient descent
-* RMSprop - more advanced, includes a concept of momentum
-* adam - default, more advanced, includes a concept of momentum
+* RMSprop - more advanced
+* adam - default, more advanced, includes a concept of momentum, most popular
 
 3. The **metrics** we want to evaluate the model on. This is not used to train the model, but gets printed out as it trains. [Here is a list of the available metrics](https://keras.io/metrics/). The most common is:
 * accuracy
