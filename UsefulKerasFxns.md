@@ -34,6 +34,16 @@ This prints out a visual description of the model.
 
 ![](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/Plot-of-Neural-Network-Model-Graph.png)
 
+You can also iterate through the layers and print information:
+```python
+print('Model Input Tensors: ', model.input, end='\n\n')
+print('Layers - Network Configuration:', end='\n\n')
+for layer in model.layers:
+    print(layer.name, layer.trainable)
+    print('Layer Configuration:')
+    print(layer.get_config(), end='\n{}\n'.format('----'*10))
+print('Model Output Tensors: ', model.output)
+```
 
 ## Callback functions
 
