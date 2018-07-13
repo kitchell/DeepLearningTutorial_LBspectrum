@@ -112,6 +112,12 @@ The CSV logger streams the epoch results to a csv file.
 
 
 ## Tips
-You can save 
-network_history = model.fit(X_train, Y_train, batch_size=128, 
-                            epochs=2, verbose=1, validation_data=(X_val, Y_val))
+
+You can use a validation set of data during traing to see how well the model is generalizing. [Better explanation here](https://stackoverflow.com/questions/46308374/what-is-validation-data-used-for-in-a-keras-sequential-model). This data will not be used to train the model, but it gives you an idea of how well it does without having to fully evaluate the model with the test data. 
+```python
+# Train model (use 10% of training set as validation set)
+history = model.fit(X_train, Y_train, validation_split=0.1)
+
+# Train model (use validation data as validation set)
+history = model.fit(X_train, Y_train, validation_data=(X_val, Y_val))
+```
