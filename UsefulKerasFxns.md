@@ -30,15 +30,39 @@ plot_model(model, to_file='model.png')
 plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 ```
 
-This prints out a vizual description of the model.
+This prints out a visual description of the model.
 
 ![](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/Plot-of-Neural-Network-Model-Graph.png)
 
 
 ## Callback functions
 
-1. EarlyStopping 
-choose a metric to monitor (e.g. val_loss) and stop training if that value has not changed for a certain number of epochs (e.g. 2).
+Callback functions are included in the fitting step of model creation:
+```python
+model.fit(X_train, Y_train, validation_data = (X_val, Y_val), epochs=50, 
+          batch_size=128, verbose=True, callbacks=[best_model, early_stop])
+```
 
-2. ModelCheckpoint
-stores the best model found during the different epoch.
+[Keras Documentation on Callback functions](https://keras.io/callbacks/)
+
+```python
+keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0, patience=0, verbose=0, mode='auto', baseline=None)
+
+early_stop = EarlyStopping(monitor='val_loss', patience=2, verbose=1) 
+```
+The early stopping callback stops training once a monitored metric stops improving. Monitor is set to the quanity to monitor (e.g. val_loss) and patience is set to the number of epochs with no change (e.g. 2).
+
+
+```python
+keras.callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
+
+#save the best model
+best_model = ModelCheckpoint(fBestModel, verbose=0, save_best_only=True)
+```
+The model checkpoint callback stores the model after every epoch. It can also be set to save the the best model found during the epochs. 
+
+
+```python
+keras.callbacks.TensorBoard(log_dir='./logs', histogram_freq=0, batch_size=32, write_graph=True, write_grads=False, write_images=False, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None, embeddings_data=None)
+```
+The tensorboard callback writes a log for use with the [TensorBoard visualization](https://www.tensorflow.org/guide/summaries_and_tensorboard).
