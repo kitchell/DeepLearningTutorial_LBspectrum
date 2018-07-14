@@ -111,6 +111,8 @@ The fitting step trains the model on the input data. For this step we need to se
 
 ## Other important information
 
+### Input data
+
 The input data needs to be in the datatype format of 'float32'. This can be set using the `.astype()` function from numpy. 
 ```python
 train_images = train_images.astype('float32')
@@ -128,4 +130,8 @@ print(train_images.shape)
 (60000, 28, 28)
 ```
 
+You may need to rearrange your input data into a new shape. This can be done with the `reshape()` function in numpy. This is applicable, for example, when using fully connected layers with image data. You may need to convert the image from a matrix to a vector.
+```python
+train_images = train_images.reshape((60000, 28 * 28))
+```
 Please continue on to [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md).
