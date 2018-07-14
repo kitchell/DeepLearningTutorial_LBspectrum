@@ -69,8 +69,8 @@ model.fit(X, Y, epochs=150, batch_size=10)
 scores = model.evaluate(X, Y)
 ```
 
-## Choices to be made when adding layers (models)
-1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/). The layers we will be interested in are as follows:
+## Choices to be made when adding layers
+1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/). The main layers we will be interested in are as follows:
 
 * **Dense** layer - a dense layer is a fully connected neural network layer
 * **Conv1D** layer - a 1 dimensional convolutional layer 
@@ -89,7 +89,7 @@ scores = model.evaluate(X, Y)
 ## Choices to be made when compiling
 The compiling step prepares the model to be run by the backend. For this step we need to select a few options. [Keras documentation on compile](https://keras.io/models/model/)
 
-1. The **loss or cost function.** We need to select the function that is used by the optimizer to optimize the weights. [Here is a list of the available loss functions](https://keras.io/losses/). The most common are:
+1. The **loss or cost function.** We need to select the function that is used by the optimizer to optimize the weights. The loss function is how the network measures its performance. [Here is a list of the available loss functions](https://keras.io/losses/). The most common are:
 * mean_squared_error 
 * binary_crossentropy - for binary label predictions
 * categorical_crossentropy - for multi category label predictions
@@ -108,5 +108,18 @@ The fitting step trains the model on the input data. For this step we need to se
 1. **epochs** - this is the number of times the model is exposed to the training set. At each iteration the optimizer tries to adjust the weights so that the loss function is minimized
 
 2. **batch_size** - This is the number of training instances observed before the optimizer performs a weght update. 
+
+## Other important information
+
+The input data needs to be in the datatype format of 'float32'. This can be set using the `.astype()` function from numpy. 
+```python
+train_images = train_images.astype('float32')
+```
+
+The input labels can be converted from a simple list to one-hot encoding using the `to_categorical` function from keras.
+```python
+from keras.utils import to_categorical
+train_labels = to_categorical(train_labels)
+```
 
 Please continue on to [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md).
