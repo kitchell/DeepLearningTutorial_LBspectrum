@@ -76,7 +76,7 @@ y_test = np.random.randint(2, size=(100, 1))
 ```python
 model = Sequential()
 ```
-4. Add the first layer. Since this is an input layer we need to add an aditional argument (input_dim). This is a dense layer will 64 nodes. The data we are inputting has 20 values per input, so we tell it that the input dimension is 20. We also set the activation function to be 'relu'. 
+4. Add the first layer. Since this is an input layer we need to add an aditional argument (input_dim). This is a dense layer with 64 nodes. The data we are inputting has 20 values per input, so we tell it that the input dimension is 20. We also set the activation function to be 'relu'. 
 ```python
 model.add(Dense(64, input_dim=20, activation='relu'))
 ```
