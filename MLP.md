@@ -15,6 +15,8 @@ The arguments we care about for the dense layer:
 
 Please see the Keras documentation for information on the others. 
 
+The more hidden units (nodes) you have, the more complex representations that can be learned, however this can lead to over fitting on the training data. The network may learn patterns you don't want it to learn, patterns only specific to the training data. 
+
 ### Dropout Layer
 
 You may also need a **Dropout** layer. A **Dropout** layer helps prevent overfitting of the data. It randomly sets a fraction (defined by the user) of the input to 0 at each update during training. [Keras documenation on Dropout](https://keras.io/layers/core/#dropout) and [detailed information on Dropout](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf). Dropout layers are not required, however they are helpful. 
