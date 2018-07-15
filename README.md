@@ -9,6 +9,7 @@ Here is the order to read the included documents in:
 4. [Convolutional Neural Networks in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/CNN.md)
 5. [Activation Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/ActivationFxns.md)
 6. [Other Useful Keras Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/UsefulKerasFxns.md)
+7. [Loss Functions and Optimizers](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/LossFxnsOptimizers.md)
 
 
 # Useful Resources
