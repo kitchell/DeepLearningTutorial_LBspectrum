@@ -48,25 +48,25 @@ A neural network is a highly structured network that has multiple layers. The fi
 
 ### Input layer
 
-The number of nodes in the input layer is determined by the number of inputs. For example, if we were doing image classification and the input was a a 28 by 28 pixel image. The model would have one input node for each pixel. There are 784 pixels in the image, so there would be 784 input nodes. 
+The number of nodes in the input layer is determined by the number of inputs. For example, say we are doing image classification and the input is a 28 by 28 pixel image. The model would have one input node for each pixel. There are 784 (28x28=784) pixels in the image, so there would be 784 input nodes. 
 
 ### Output layer
 
-The number of nodes in the output layer is determined by the number of categories the inputs are being classified into. If it is a binary classification (2 options), the output layer has 2 nodes. If there a are 5 possibly categories, there are 5 nodes. 
+The number of nodes in the output layer is determined by the number of categories the inputs are being classified into. If it is a binary classification (2 options), the output layer has 1 node (the options are 0 or 1). If there are 5 possibly categories, there are 5 nodes. 
 
 ### Hidden layers
 
-The number of nodes in the hidden layers is chosen by the user. This is unfortunately not determined by anything in particulare. It is best to test different amounts of nodes and see how it changes the outcome. 
+The number of nodes in the hidden layers is chosen by the user. This is unfortunately not determined by anything in particular and is one of the parameters that will need to be optimized. It is best to test different amounts of nodes and see how it affects the outcome. 
 
 ## Training a neural network
 In order to train a neural network we use a process called **back propagation**. It is essentially a way of progressively correcting mistakes as soon as they are detected. Each layer of a network has a set of weights that determines the output of that layer for a given set of inputs. In the beginning those weights are randomly assigned. The network is activated and values are propagated forward through the network. Since we know the actual value of what the output should be we can calculate the error in prediction. We then propagate the error backwards through the network and use a gradient descent algorithm to adjust the weights to minimize the error. This process repeats until the error reaches below a certain threshold. 
 
 ## One-hot encoding
-Deep learning typically requires that the categories used in classification be represented by one-hot encoding. This is done be representing the category of each input as a vector the length of the number of categories. The vector is filled with 0 except for the specific category belonging to that input. For example, imagine I have 10 subjects and the first 5 are female and the second 5 are male. I might normally represent this data in a list of strings: `labels = [female, female, female, female, female, male, male, male, male, male]` or better yet a list of integers where `1 = male` and `2 = female`: `labels = [2, 2, 2, 2, 2, 1, 1, 1, 1, 1] `
+Deep learning requires that the categories used in classification be represented by one-hot encoding. This is done be representing the category of each input as a vector the length of the number of categories. The vector is filled with 0's except for the specific category belonging to that input. For example, imagine I have 10 samples and the first 5 are from female subjects and the second 5 are from male subjects. I might normally represent this data in a list of strings: `labels = [female, female, female, female, female, male, male, male, male, male]` or better yet a list of integers where `1 = male` and `2 = female`: `labels = [2, 2, 2, 2, 2, 1, 1, 1, 1, 1] `
 
-One-hot encoding would change the represention from 1 and 2 to `male = [1, 0]` and `female = [0, 1]` so that the ten subjects would be represented as: `labels = [[0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 0], [1, 0], [1, 0], [1, 0]]`
+One-hot encoding would change the represention from 1 and 2 to `male = [1, 0]` and `female = [0, 1]` so that the ten subjects would be represented as: `labels = [[0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [1, 0], [1, 0], [1, 0], [1, 0]]`. This can be further reduced to just `labels = [0,0,0,0,0,1,1,1,1,1]`.
 
-Another example: If you had five categories: `[A, B, C, D, E]`, a subject belonging to category 'C' would be represented by `[0, 0, 1, 0, 0]`. 
+Another example: If you had five categories: `[A, B, C, D, E]`, a sample belonging to category 'C' would be represented by `[0, 0, 1, 0, 0]`, a sample belonging to category A would be represented by `[1, 0, 0, 0, 0]`. 
 
 
 Please continue on to the [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md). Keras is the python library we will be using to create neural networks.
