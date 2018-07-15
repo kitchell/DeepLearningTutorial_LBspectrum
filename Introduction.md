@@ -1,7 +1,7 @@
 # Introduction to Deep Learning
 ### Tutorial for applying 'Deep Learning' neural networks to the Laplace Beltrami shape data
 
-In this tutorial we will show how to implement several different types of neural networks for classification with the shape descriptor computed by the Laplace Beltrami operator. We will be using the Keras library in Python with a Tensorflow backend.
+In this tutorial, I will demonstrate how to implement several different types of neural networks for classification with the shape descriptor computed by the Laplace Beltrami operator. I will be using the Keras library in Python with a Tensorflow backend.
 
 First we need to cover some basic information and terms.
 
