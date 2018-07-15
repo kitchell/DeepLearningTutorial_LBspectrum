@@ -1,5 +1,5 @@
 # Deep Learning Tutorial - Lindsey Kitchell
-Tutorial for combining **Deep Learning** and the **Laplace Beltrami spectrum**. This tutorial assumes some experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful. The tutorial will be applicable beyond the Laplace Beltrami spectrum, but the data used will focus on it. 
+This is a tutorial for combining **Deep Learning** and the **Laplace Beltrami spectrum**. This tutorial assumes some experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful. The tutorial will be applicable beyond the Laplace Beltrami spectrum, but the data used will focus on it. 
 
 # Start Here
 I recommend to read the included documents in the following order:
