@@ -145,3 +145,4 @@ history = model.fit(X_train, Y_train, validation_data=(X_val, Y_val))
 
 [View the hidden representations](https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london2017/2.1%20Hidden%20Layer%20Representation%20and%20Embeddings.ipynb) (scroll down to end)
 
+Please continue on to [Loss functions and optimizers](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/LossFxnsOptimizers.md).
