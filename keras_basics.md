@@ -1,6 +1,6 @@
 # Introduction to Keras
 
-Keras is a high level, very powerful, and easy to use library for deep learning in Python. It runs on top of multiple other libraries and uses them as a backend, such as Tensorflow or Theano. I will be using a tensorflow backend, but it should run the same no matter what backend is used. 
+Keras is a high level, very powerful, and easy to use library for deep learning in Python. It runs on top of multiple other libraries and uses them as a backend, such as Tensorflow or Theano. I will be using a Tensorflow backend, but it should run the same no matter what backend is used. 
 
 ### Useful Resources
 
@@ -8,12 +8,12 @@ Keras is a high level, very powerful, and easy to use library for deep learning 
 
 ## Models in Keras
 
-Models in Keras are defined as a sequence of layers. A Sequential model is created first and layers are added one at a time until you are happy with the topology. 
+Models (or networks) in Keras are defined as a sequence of layers. A Sequential model is created first and layers are added one at a time until you are happy with the network topology. 
 
 ### Example of defined, compiled, fit and tested model (after data is preprocessed and libraries imported)
 
 ```
-X = input_values #shape is 100 by 8
+X = input_values #shape is 100 rows by 8 columns
 Y = input_categories #shape is 100 by 3 (one-hot encoding)
 
 model = Sequential()
