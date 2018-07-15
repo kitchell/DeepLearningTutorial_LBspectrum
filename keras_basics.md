@@ -20,8 +20,8 @@ Y_val = validation_labels
 
 model = Sequential()
 model.add(Dense(12, input_dim=8, activation='relu'))
-model.add(Dense(8, activation='relu')
-model.add(Dense(3, activation='softmax')
+model.add(Dense(8, activation='relu'))
+model.add(Dense(3, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.fit(X, Y, epochs=150, batch_size=10)
@@ -54,12 +54,12 @@ model.add(Dense(12, input_dim=8, activation='relu'))
 4. Add another fully connected hidden layer. This time with 8 nodes, still with the relu activation function. Notice that we did not have to set the input dimension. You only set the input dimension for the first layer added. 
 
 ```python
-model.add(Dense(8, activation='relu')
+model.add(Dense(8, activation='relu'))
 ```
 
 5. Add the output layer. It has 3 nodes, one for each possible category. It uses the 'softmax' activation function (recommended for multi-class classification). 
 ```python
-model.add(Dense(3, activation='softmax')
+model.add(Dense(3, activation='softmax'))
 ```
 
 6. Compile the model. Now that the network is defined, we have to compile it. This translates the model from Keras into the specific backend being used (Tensorflow in my case). 
