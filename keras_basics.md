@@ -70,7 +70,7 @@ scores = model.evaluate(X, Y)
 ```
 
 ## Choices to be made when adding layers
-1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/). The main layers we will be interested in are as follows:
+1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/) and you will learn more about the different layers later. The main layers we will be interested in are as follows:
 
 * **Dense** layer - a dense layer is a fully connected neural network layer
 * **Conv1D** layer - a 1 dimensional convolutional layer 
@@ -90,7 +90,7 @@ scores = model.evaluate(X, Y)
 The compiling step prepares the model to be run by the backend. For this step we need to select a few options. [Keras documentation on compile](https://keras.io/models/model/)
 
 1. The **loss or cost function.** We need to select the function that is used by the optimizer to optimize the weights. The loss function is how the network measures its performance. [Here is a list of the available loss functions](https://keras.io/losses/). The most common are:
-* mean_squared_error 
+* mean_squared_error - for regression
 * binary_crossentropy - for binary label predictions
 * categorical_crossentropy - for multi category label predictions
 
@@ -113,12 +113,12 @@ The fitting step trains the model on the input data. For this step we need to se
 
 ### Input data
 
-The input data needs to be in the datatype format of 'float32'. This can be set using the `.astype()` function from numpy. 
+The input data (both samples and the labels) needs to be in the datatype format of 'float32'. This can be set using the `.astype()` function from numpy. 
 ```python
 train_images = train_images.astype('float32')
 ```
 
-The input labels can be converted from a simple list to one-hot encoding using the `to_categorical` function from keras.
+The input labels can be converted from a simple list to one-hot encoding using the `to_categorical` function from keras. The labels should be in the format of a numpy array. 
 ```python
 from keras.utils import to_categorical
 train_labels = to_categorical(train_labels)
