@@ -1,8 +1,8 @@
-# DeepLearningTutorial_LBspectrum
-Tutorial for combining "Deep Learning" and the Laplace Beltrami spectrum. It is recommended that you have experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful. The tutorial will be applicable beyond the Laplace Beltrami spectrum, but the data used will focus on it. 
+# Deep Learning Tutorial - Lindsey Kitchell
+Tutorial for combining **Deep Learning** and the **Laplace Beltrami spectrum**. This tutorial assumes some experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful. The tutorial will be applicable beyond the Laplace Beltrami spectrum, but the data used will focus on it. 
 
 # Start Here
-Here is the order to read the included documents in:
+I recommend to read the included documents in the following order:
 1. [Introduction to Deep Learning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Introduction.md)
 2. [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md)
 3. [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md)
@@ -10,11 +10,18 @@ Here is the order to read the included documents in:
 5. [Activation Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/ActivationFxns.md)
 6. [Other Useful Keras Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/UsefulKerasFxns.md)
 7. [Loss Functions and Optimizers](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/LossFxnsOptimizers.md)
+8. Overfitting and underfitting
+9. preparing your data
 
 
 # Useful Resources
-The following links were very helpful in the creation of this tutorial
 
+For learning about machine learning in general, I recommend this [free introductory course from udacity](https://www.udacity.com/course/intro-to-machine-learning--ud120). It will get you up and running with machine learning in python very quickly. 
+
+
+The following links were very helpful in the creation of this tutorial:
+
+* https://www.youtube.com/watch?v=FrkYu2zVUyM
 * https://github.com/leriomaggio/deep-learning-keras-tensorflow/tree/pydata-london2017
 * https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
 * https://elitedatascience.com/keras-tutorial-deep-learning-in-python#step-7
@@ -24,5 +31,5 @@ The following links were very helpful in the creation of this tutorial
 * http://www.zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf
 * https://www.youtube.com/channel/UC9OeZkIwhzfv-_Cb7fCikLQ
 * https://machinelearningmastery.com/applied-deep-learning-in-python-mini-course/
-* https://www.youtube.com/watch?v=FrkYu2zVUyM
+
 
