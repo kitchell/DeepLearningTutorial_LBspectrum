@@ -12,9 +12,11 @@ Models (or networks) in Keras are defined as a sequence of layers. A Sequential 
 
 ### Example of defined, compiled, fit and tested model (after data is preprocessed and libraries imported)
 
-```
-X = input_values #shape is 100 rows by 8 columns
-Y = input_categories #shape is 100 by 3 (one-hot encoding)
+```python
+X = test_samples #shape is 100 rows by 8 columns
+Y = test_labels #shape is 100 by 3 (one-hot encoding)
+X_val = validation_samples
+Y_val = validation_labels
 
 model = Sequential()
 model.add(Dense(12, input_dim=8, activation='relu'))
@@ -29,48 +31,54 @@ scores = model.evaluate(X, Y)
 
 ### Defining the network structure
 
-Lets say we have 100 subjects and 8 variables per subject and there are 3 possible categories to which the subjects belong. Lets build a simple fully connected network structure. I will go through the above code step by step
+Lets say we have 100 samples and 8 variables per sample and there are 3 possible categories to which the samples belong. We also have a small set of samples set aside for validation of the model. Lets build a simple fully connected network structure. I will go through the above code step by step
 
-1. Define the data (made up for now. Typically, you will likely want to split the data up for cross validation, but for now we will ignore that as we are only interested in learning the general parts of a Keras model.)
+1. Define the data. X and Y are the training data. They will be used to train the model. X_val and Y_val, are samples from the same dataset that were set aside for testing the model's accuracy. They are not used in the training process (more on how and why to do this later). 
 
-```
-X = input_values #shape is 100 by 8
-Y = input_categories #shape is 100 by 3 (one-hot encoding)
+```python
+X = test_samples #shape is 100 rows by 8 columns
+Y = test_labels #shape is 100 by 3 (one-hot encoding)
+X_val = validation_samples
+Y_val = validation_labels
 ```
 
 2. Define the model as a sequential model
-```
+```python
 model = Sequential()
 ```
 3. Add the input and first hidden layers. Here we use a fully connected layer which is defined by the 'Dense' class in Keras. We tell the model to create an input layer with 8 nodes by setting the `input_dim` variable to 8. The 12 tells it to create a Dense hidden layer with 12 nodes. The 'relu' tells the layer to use the 'relu' activation function (more on that later).
-```
+```python
 model.add(Dense(12, input_dim=8, activation='relu'))
 ```
+
 4. Add another fully connected hidden layer. This time with 8 nodes, still with the relu activation function. Notice that we did not have to set the input dimension. You only set the input dimension for the first layer added. 
 
-```
+```python
 model.add(Dense(8, activation='relu')
 ```
-5. Add the output layer. It has 3 nodes, one for each possible category. It uses the 'softmax' activation function. 
-```
+
+5. Add the output layer. It has 3 nodes, one for each possible category. It uses the 'softmax' activation function (recommended for multi-class classification). 
+```python
 model.add(Dense(3, activation='softmax')
 ```
-6. Compile the model. Now that the network is defined, we have to compile it. 
-```
+
+6. Compile the model. Now that the network is defined, we have to compile it. This translates the model from Keras into the specific backend being used (Tensorflow in my case). 
+```python
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 ```
 
-7. Fit the model. We need to train the model on the data.
-```
+7. Fit the model. The step is where the model is actually trained on the data. 
+```python
 model.fit(X, Y, epochs=150, batch_size=10)
 ```
-8. Test the accuracy. Here we are testing the accuracy against the data it was trained on. It would be better to use cross validation, but this is a simple example. 
-```
-scores = model.evaluate(X, Y)
+
+8. Test the accuracy. Here we are testing the accuracy with the validatiion samples we kept out of the training dataset.   
+```python
+scores = model.evaluate(X_val, Y_val)
 ```
 
 ## Choices to be made when adding layers
-1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/) and you will learn more about the different layers later. The main layers we will be interested in are as follows:
+1. There are many choices to be made when adding layers, starting with the type of layer to add. You can find out more about the existing layers [here](https://keras.io/layers/about-keras-layers/) and you will learn more about the different layers and their options later. The main layers we are interested in are as follows:
 
 * **Dense** layer - a dense layer is a fully connected neural network layer
 * **Conv1D** layer - a 1 dimensional convolutional layer 
@@ -107,7 +115,7 @@ The fitting step trains the model on the input data. For this step we need to se
 
 1. **epochs** - this is the number of times the model is exposed to the training set. At each iteration the optimizer tries to adjust the weights so that the loss function is minimized
 
-2. **batch_size** - This is the number of training instances observed before the optimizer performs a weght update. 
+2. **batch_size** - This is the number of training instances observed before the optimizer performs a weight update. 
 
 ## Other important information
 
