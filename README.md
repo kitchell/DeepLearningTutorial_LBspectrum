@@ -18,6 +18,7 @@ I recommend to read the included documents in the following order:
 
 For learning about machine learning in general, I recommend this [free introductory course from udacity](https://www.udacity.com/course/intro-to-machine-learning--ud120). It will get you up and running with machine learning in python very quickly. 
 
+I also recommend this book by the creator of Keras (the python library used in this tutorial): [Deep Learning with Python](https://www.manning.com/books/deep-learning-with-python). It has a lot of detailed information about deep learning in general and how to implement it with Keras.
 
 The following links were very helpful in the creation of this tutorial:
 
