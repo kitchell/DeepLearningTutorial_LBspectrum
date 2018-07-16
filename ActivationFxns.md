@@ -2,9 +2,10 @@
 
 Activation functions are what decide whether a neuron should be activated or not. It is the non linear transformation that is done over the input signal. This transformed output is then sent to the next layer of neurons as input.
 
-[useful resource](https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0)
-[another useful resource](https://www.analyticsvidhya.com/blog/2017/10/fundamentals-deep-learning-activation-functions-when-to-use-them/)
-[another useful resource and source of the images used below](http://cs231n.github.io/neural-networks-1/#actfun)
+* [useful resource](https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0)
+* [another useful resource](https://www.analyticsvidhya.com/blog/2017/10/fundamentals-deep-learning-activation-functions-when-to-use-them/)
+* [another useful resource and source of the images used below](http://cs231n.github.io/neural-networks-1/#actfun)
+* [yet another useful resource](http://cs231n.github.io/neural-networks-1/#actfun)
 
 There are many possible input functions. See the [Keras documentation for a list of all of them](https://keras.io/activations/). The most commonly used functions are Sigmoid, Tanh, ReLU, and softmax. 
 
