@@ -122,7 +122,7 @@ The CSV logger streams the epoch results to a csv file.
 
 ## Other functions
 
-### Batch noramlization
+### Batch normalization
 
 from keras.layers.normalization import BatchNormalization
 
