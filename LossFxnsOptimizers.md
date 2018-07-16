@@ -24,7 +24,7 @@ Here is the [Keras documentaiton for loss functions](https://keras.io/losses/)
 
 ## Optimizers
 
-There are many optimizers you can use and many are a variant of stochastic gradient descent. For all of them you will be able to tune the **learning rate** parameter. The learning rate parameter tells the optimizer how far to move the weights of the layer in the direction opposite of the gradient. This parameter is very important, if it is too high then the training of the model may never converge. If it is too low, then the training is more relibable but very slow. 
+There are many optimizers you can use and many are a variant of stochastic gradient descent. For all of them you will be able to tune the **learning rate** parameter. The learning rate parameter tells the optimizer how far to move the weights of the layer in the direction opposite of the gradient. This parameter is very important, if it is too high then the training of the model may never converge. If it is too low, then the training is more relibable but very slow. It is best to try out multiple different learning rates to find which one is best. 
 
 ![](https://cdn-images-1.medium.com/max/800/1*EP8stDFdu_OxZFGimCZRtQ.jpeg)
 
@@ -38,11 +38,52 @@ keras.optimizers.SGD(lr=0.01, momentum=0.0, decay=0.0, nesterov=False)
 
 This is a common 'basic' optimizer and many optimizers are variants of this. It can be adjusted by changing the learning rate, momentum and decay.
 
-* learning rate (lr) - This parameter tells the optimizer how far to move the weights in the direction opposite of the gradient for a mini-batch.
-* momentum - accelerates SGD in the relevant direction and dampens oscillations
-* decay - 
+* learning rate (lr) 
+* momentum - accelerates SGD in the relevant direction and dampens oscillations. Basically it helps SGD push past local optima, gaining faster convergence and less oscillation. A typical choice of momentum is between 0.5 to 0.9.
+* decay - you can set a decay function for the learning rate. This will adjust the learning rate as training progresses.
+* nesterov - [Nesterov momentum is a different version of the momentum method which has stronger theoretical converge guarantees for convex functions. In practice, it works slightly better than standard momentum](https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1)
 
+**Decay Functions**
+* Time based decay
+This changes the learning rate by dividing it by the epoch the model is on. 
+```python
+decay_rate = learning_rate / epochs
 
+## set decay = decay_rate in the SGD function
+```
+* Step decay 
+Step decay can be done using the [learning rate scheduler](https://keras.io/callbacks/#learningratescheduler) callback function to drop the learning rate every few epochs. In the example below it drops it by half every 10 epochs. 
+
+```python
+def step_decay(epoch):
+   initial_lrate = 0.1
+   drop = 0.5
+   epochs_drop = 10.0
+   lrate = initial_lrate * math.pow(drop,  
+           math.floor((1+epoch)/epochs_drop))
+   return lrate
+lrate = LearningRateScheduler(step_decay)
+
+#include the callback in the fit function
+model.fit(X_train, y_train, validation_data=(X_test, y_test), 
+          epochs=epochs, batch_size=batch_size, callbacks=lrate, 
+          verbose=2)
+```
+
+* Exponential decay
+```python
+def exp_decay(epoch):
+   initial_lrate = 0.1
+   k = 0.1
+   lrate = initial_lrate * exp(-k*epoch)
+   return lrate
+lrate = LearningRateScheduler(exp_decay)
+
+#include the callback in the fit function
+model.fit(X_train, y_train, validation_data=(X_test, y_test), 
+          epochs=epochs, batch_size=batch_size, callbacks=lrate, 
+          verbose=2)
+```
 
 ### RMSprop
 ```python
@@ -60,7 +101,9 @@ keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.
 
 
 
-
+other resources:
+* https://medium.com/octavian-ai/which-optimizer-and-learning-rate-should-i-use-for-deep-learning-5acb418f9b2
+* https://towardsdatascience.com/learning-rate-schedules-and-adaptive-learning-rate-methods-for-deep-learning-2c8f433990d1
 
 
 
