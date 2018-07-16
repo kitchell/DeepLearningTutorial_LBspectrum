@@ -24,7 +24,11 @@ Here is the [Keras documentaiton for loss functions](https://keras.io/losses/)
 
 ## Optimizers
 
-There are many optimizers you can use. Here are the most common optimizers you might be interested in using:
+There are many optimizers you can use and many are a variant of stochastic gradient descent. For all of them you will be able to tune the **learning rate** parameter. The learning rate parameter tells the optimizer how far to move the weights of the layer in the direction opposite of the gradient. This parameter is very important, if it is too high then the training of the model may never converge. If it is too low, then the training is more relibable but very slow. 
+
+![](https://cdn-images-1.medium.com/max/800/1*EP8stDFdu_OxZFGimCZRtQ.jpeg)
+
+[image source is this useful resource on learning rates](https://towardsdatascience.com/estimating-optimal-learning-rate-for-a-deep-neural-network-ce32f2556ce0)
 
 ### stochastic gradient descent
 
@@ -32,9 +36,9 @@ There are many optimizers you can use. Here are the most common optimizers you m
 keras.optimizers.SGD(lr=0.01, momentum=0.0, decay=0.0, nesterov=False)
 ```
 
-This is a common 'basic' optimizer and several other optimizers are variants of this. It can be adjusted by changing the learning rate, momentum and decay.
+This is a common 'basic' optimizer and many optimizers are variants of this. It can be adjusted by changing the learning rate, momentum and decay.
 
-* learning rate (lr) - 
+* learning rate (lr) - This parameter tells the optimizer how far to move the weights in the direction opposite of the gradient for a mini-batch.
 * momentum - accelerates SGD in the relevant direction and dampens oscillations
 * decay - 
 
