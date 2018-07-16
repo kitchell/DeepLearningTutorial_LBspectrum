@@ -124,17 +124,20 @@ The CSV logger streams the epoch results to a csv file.
 
 ### Batch normalization
 
+When we initialize a model, we typically normalize the inital values of our input to have 0 mean and unit variance. As training progresses we may loose this normalization, slowing training and causing issues. A batch normalization layer reestablishes these normalizations. [Keras documentation](https://keras.io/layers/normalization/).
+
+```python
 from keras.layers.normalization import BatchNormalization
 
 BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, 
                    beta_initializer='zeros', gamma_initializer='ones', moving_mean_initializer='zeros',
                    moving_variance_initializer='ones', beta_regularizer=None, gamma_regularizer=None,
                    beta_constraint=None, gamma_constraint=None)
-
+```
 
 ## Tips
 
-You can use a validation set of data during traing to see how well the model is generalizing. [Better explanation here](https://stackoverflow.com/questions/46308374/what-is-validation-data-used-for-in-a-keras-sequential-model). This data will not be used to train the model, but it gives you an idea of how well it does without having to fully evaluate the model with the test data. 
+You can use a validation set of data during training to see how well the model is generalizing. [Better explanation here](https://stackoverflow.com/questions/46308374/what-is-validation-data-used-for-in-a-keras-sequential-model). This data will not be used to train the model, but it gives you an idea of how well it does without having to fully evaluate the model with the test data. 
 ```python
 # Train model (use 10% of training set as validation set)
 history = model.fit(X_train, Y_train, validation_split=0.1)
