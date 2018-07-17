@@ -13,7 +13,7 @@ I recommend to read the included documents in the following order:
 8. [Evaluating the Neural Networks (cross validation)](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/EvaluatingtheNN.md)
 9. [Data Preprocessing](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/DataPreprocessing.md)
 10. [Regularization](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Regularization.md)
-11. hyperparam tuning
+11. [Hyperparameter Tuning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/HyperparamTuning.md)
 
 
 # Sources and Useful Resources
