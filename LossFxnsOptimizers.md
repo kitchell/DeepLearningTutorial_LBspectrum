@@ -152,6 +152,7 @@ model.compile(optimizer=rmsprop, loss=loss, metrics=[metrics.binary_accuracy])
 * http://ruder.io/optimizing-gradient-descent/index.html#gradientdescentoptimizationalgorithms
 
 
+Please move on to [Evaluating the Neural Networks (cross validation)](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/EvaluatingtheNN.md)
 
 
 
