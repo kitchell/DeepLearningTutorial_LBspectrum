@@ -113,6 +113,16 @@ keras.callbacks.TensorBoard(log_dir='./logs', histogram_freq=0, batch_size=32, w
 ```
 The tensorboard callback writes a log for use with the [TensorBoard visualization](https://www.tensorflow.org/guide/summaries_and_tensorboard).
 
+Arguments:
+* log_dir - directory to save the log files
+* histogram_freq - how often to save activation histograms
+* embeddings_freq - how often to save embedding data
+
+launch via command line
+```
+tensorboard --logdir=my_log_dir
+```
+and browse to http://localhost:6006
 
 ### CSV logger
 ```python
@@ -124,7 +134,7 @@ The CSV logger streams the epoch results to a csv file.
 
 ### Batch normalization
 
-When we initialize a model, we typically normalize the inital values of our input to have 0 mean and unit variance. As training progresses we may loose this normalization, slowing training and causing issues. A batch normalization layer reestablishes these normalizations. [Keras documentation](https://keras.io/layers/normalization/).
+When we initialize a model, we typically normalize the inital values of our input to have 0 mean and unit variance. As training progresses we may loose this normalization, slowing training and causing issues. A batch normalization layer reestablishes these normalizations. It is typically used after a dense or convolutional layer. [Keras documentation](https://keras.io/layers/normalization/). 
 
 ```python
 from keras.layers.normalization import BatchNormalization
@@ -145,6 +155,17 @@ history = model.fit(X_train, Y_train, validation_split=0.1)
 # Train model (use validation data as validation set)
 history = model.fit(X_train, Y_train, validation_data=(X_val, Y_val))
 ```
+
+You can save a trained model:
+```python
+model.save('filepath/mymodel.h5')
+```
+and load a saved model:
+```python
+from keras.models import load_model
+model = load_model('my_model.h5')
+```
+[More info](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model).
 
 [View the hidden representations](https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london2017/2.1%20Hidden%20Layer%20Representation%20and%20Embeddings.ipynb) (scroll down to end)
 
