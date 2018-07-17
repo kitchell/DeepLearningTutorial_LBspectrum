@@ -203,3 +203,6 @@ test_score = model.evaluate(test_data, test_labels)
 
 ### Useful resources:
 source of images: https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6
+
+
+Please continue on to [Data Preprocessing](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/DataPreprocessing.md).
