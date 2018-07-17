@@ -36,6 +36,9 @@ Here is a helpful graphic that shows the result of two different filters being c
 ![image](https://ujwlkarn.files.wordpress.com/2016/08/giphy.gif?w=400h=300)
 
 
+An important difference between CNNs and MLPs (Dense layers): An MLP/Dense/Fully connected layer learns global patterns in the input feature space, wheras a CNN/convolutional layer learns local patterns. If we were examining images, a Dense layer would learn patterns that involve all pixels of the image, while a convolutional layer would learn patterns within small windows of the image. 
+
+
 In Keras, a convolutional layer is added by using a Conv1D (for 1D convolutions) or Conv2D (for 2D convolutions) layer:
 
 ```python
