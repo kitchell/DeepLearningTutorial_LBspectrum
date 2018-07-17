@@ -11,7 +11,8 @@ I recommend to read the included documents in the following order:
 6. [Other Useful Keras Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/UsefulKerasFxns.md)
 7. [Loss Functions and Optimizers](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/LossFxnsOptimizers.md)
 8. [Evaluating the Neural Networks (cross validation)](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/EvaluatingtheNN.md)
-9. preparing your data
+9. [Data Preprocessing](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/DataPreprocessing.md)
+10. hyperparam tuning
 
 
 # Useful Resources
