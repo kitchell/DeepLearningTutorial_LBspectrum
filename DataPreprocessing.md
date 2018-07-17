@@ -4,11 +4,21 @@ Before feeding your data into a neural network there is some data preparation th
 
 ## Vectorization
 
-All inputs and targets (data and labels) fed into a neural network must be tensors of floating point data. The step of turning the data into a tensor is called *vectorization*. A tensor is ...
+All inputs and targets (data and labels) fed into a neural network must be tensors of floating point data. The step of turning the data into a tensor is called *vectorization*. A tensor is a multidimensional array, a generalization of matrices to an arbitrary number of dimensions. For example, a matrix is a 2D tensor, a vector is a 1D tensor, a scalar is a 0D tensor etc. In python, these are represented using numpy arrays. Your input data should be in a numpy array with the data format 'float32'. Data labels can be vectorized using one-hot encoding, as we have seen already. 
 
-examples...
+Example of data tensors:
 
-For the data labels this is done using one-hot encoding, as we have seen already. 
+### Vector data
+
+Vector data should be combined into a 2D array with the size (samples, features). One row per sample, one column per feature.
+
+### Time series or Sequence data
+
+Time series or sequence data should be in a 3D array. Each sample can be encoded as a 2D matrix (one row per feature, one column per timestep) and the samples are combined into a 3D array of size (samples, features, timesteps). 
+
+### Image data
+
+Image data should be in a 4D array of size (samples, image height, image width, number of channels). The number of channels referes to the color channels of the image. If it is a greyscale image, then the number of channels is 1. If it is a color image, then the number of channels is 3 (RGB or HSV). 
 
 
 ## Normalization
@@ -38,7 +48,6 @@ scaler = StandardScaler()
 X_normalized = scaler.fit_transform(X)
 ```
 
-In the case of the Laplace Beltrami data, the spectrum is already vectorized. All we will need to do is one-hot encode the labels and normalize the eigenvalues. 
 
 
 
