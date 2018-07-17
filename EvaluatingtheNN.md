@@ -94,7 +94,7 @@ Cross validation consists of splitting the data into subsets of data. You then t
 
 ![](https://cdn-images-1.medium.com/max/1600/1*J2B_bcbd1-s1kpWOu_FZrg.png)
 
-There are several types of cross validation. We will cover **K-folds cross validation**, **Iterated K-folds cross validation**, and **Leave One Out cross validation***.
+There are several types of cross validation. We will cover **K-folds cross validation**, **Iterated K-folds cross validation**, and **Leave One Out cross validation**.
 
 ### K-folds cross validation
 
@@ -119,8 +119,8 @@ for train_index, test_index in kf.split(X):
     y_train, y_test = y[train_index], y[test_index]
     
     model = get_model()
-    model.train(training_data)
-    validation_score = model.evaluate(validation_data)
+    model.train(X_train, y_train)
+    validation_score = model.evaluate(X_test, y_test)
     validation_scores.append(validation_score)
 
 #get average score
@@ -129,31 +129,77 @@ validation_score = np.average(validation_scores)
 #test on final test data if it was held out
 model = get_model()
 model.train(data)
-test_score = model.evaluate(test_data)
+test_score = model.evaluate(test_data, test_labels)
 ```
 
-### Iterated K-fold cross validation
+### Iterated K-folds cross validation
 
-Iterated K-fold cross validation is useful when you have relatively little data available and you need to evaluate your model as precisely as possible. It consists of applying K-fold cross validation multiple times and shuffling the data every time before splitting the data into *k* subsets. The final score is the average of the scores of each k-fold cross validation. This can be computationally expensive as you train and test *n* x *k* times, where *n* is the number of iterations. 
+Iterated K-folds cross validation is useful when you have relatively little data available and you need to evaluate your model as precisely as possible. It consists of applying K-fold cross validation multiple times and shuffling the data every time before splitting the data into *k* subsets. The final score is the average of the scores of each k-fold cross validation. This can be computationally expensive as you train and test *n* x *k* times, where *n* is the number of iterations. 
+
+This can be done with an sklearn function. [sklearn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RepeatedKFold.html#sklearn.model_selection.RepeatedKFold)
+
+```python
+from sklearn.model_selection import RepeatedKFold
+
+X = data
+y = labels
+
+#establish the function, choos the number of folds and number of repeats
+rkf = RepeatedKFold(n_splits=2, n_repeats=2)
+
+#iterate though the folds and repeats
+validation_scores = []
+for train_index, test_index in rkf.split(X):
+    X_train, X_test = X[train_index], X[test_index]
+    y_train, y_test = y[train_index], y[test_index]
+
+    model = get_model()
+    model.train(X_train, y_train)
+    validation_score = model.evaluate(X_test, y_test)
+    validation_scores.append(validation_score)
+
+#get average score
+validation_score = np.average(validation_scores)
+
+#test on final test data if it was held out
+model = get_model()
+model.train(data)
+test_score = model.evaluate(test_data, test_labels)
+```
 
 ### Leave One Out (LOO) cross validation
 
 Another option when you have relatively little data, is to use LOO cross validation. The is essentially K-fold cross validation when *k* is equal to the number of samples in the dataset. You train on all but one sample and test just the sample that was left out. This is repeated until every sample has been the test sample. The final accuracy is the average accuracy across all samples. This is computationally expensive, but useful for small datasets. 
 
-sklearn has a function for this as well. [sklearn documentation]()
+sklearn has a function for this as well. [sklearn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.LeaveOneOut.html#sklearn.model_selection.LeaveOneOut)
+
 ```python
 from sklearn.model_selection import LeaveOneOut 
-X = np.array([[1, 2], [3, 4]])
-y = np.array([1, 2])
+X = data
+y = labels
+
+# establish the function
 loo = LeaveOneOut()
-loo.get_n_splits(X)
 
-
+#iterate through the samples
+validation_scores = []
 for train_index, test_index in loo.split(X):
-   print("TRAIN:", train_index, "TEST:", test_index)
-   X_train, X_test = X[train_index], X[test_index]
-   y_train, y_test = y[train_index], y[test_index]
-   print(X_train, X_test, y_train, y_test)
+    X_train, X_test = X[train_index], X[test_index]
+    y_train, y_test = y[train_index], y[test_index]
+    
+    model = get_model()
+    model.train(X_train, y_train)
+    validation_score = model.evaluate(X_test, y_test)
+    validation_scores.append(validation_score)
+
+#get average score
+validation_score = np.average(validation_scores)
+
+#test on final test data if it was held out
+model = get_model()
+model.train(data)
+test_score = model.evaluate(test_data, test_labels)
 ```
+
 ### Useful resources:
 source of images: https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6
