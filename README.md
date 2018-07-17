@@ -10,7 +10,7 @@ I recommend to read the included documents in the following order:
 5. [Activation Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/ActivationFxns.md)
 6. [Other Useful Keras Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/UsefulKerasFxns.md)
 7. [Loss Functions and Optimizers](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/LossFxnsOptimizers.md)
-8. Overfitting and underfitting
+8. [Evaluating the Neural Networks (cross validation)](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/EvaluatingtheNN.md)
 9. preparing your data
 
 
