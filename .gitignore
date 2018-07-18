@@ -1,3 +1,4 @@
 *.pk
 *.h5
 *.png
+.ipynb_check*
