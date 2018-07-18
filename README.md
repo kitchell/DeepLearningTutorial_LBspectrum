@@ -2,6 +2,8 @@
 This is a tutorial for combining **Deep Learning** and the **Laplace Beltrami spectrum**. This tutorial assumes some experience with python and machine learning. Experience using the machine learning modules from the python library sci-kit-learn will also be very helpful. The tutorial will be applicable beyond the Laplace Beltrami spectrum, but the data used will focus on it. 
 
 # Start Here
+
+## Background information
 I recommend to read the included documents in the following order:
 1. [Introduction to Deep Learning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Introduction.md)
 2. [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md)
@@ -15,6 +17,10 @@ I recommend to read the included documents in the following order:
 10. [Regularization](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Regularization.md)
 11. [Hyperparameter Tuning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/HyperparamTuning.md)
 
+## Working with data
+12. [MLP - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)
+13. 1D CNN - Gender Classificaiton
+14. 2D CNN - Gender Classification
 
 # Sources and Useful Resources
 
