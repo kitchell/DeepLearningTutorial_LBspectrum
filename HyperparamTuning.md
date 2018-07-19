@@ -95,5 +95,8 @@ There is a package called [Hyperas](http://maxpumperla.com/hyperas/) that combin
 
 
 ### useful resources
+http://neupy.com/2016/12/17/hyperparameter_optimization_for_neural_networks.html
+
 https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london2017/4.%20HyperParameter%20Tuning.ipynb
+
 http://scikit-learn.org/stable/modules/grid_search.html
