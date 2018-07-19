@@ -53,4 +53,8 @@ Dropout has already been discussed but I will mention it again here. Dropout con
 model.add(layers.Dropout(0.5))
 ```
 
+### Useful resources
+http://nbviewer.jupyter.org/github/fchollet/deep-learning-with-python-notebooks/blob/master/4.4-overfitting-and-underfitting.ipynb
+
+
 Please move on to [Hyperparameter Tuning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/HyperparamTuning.md).
