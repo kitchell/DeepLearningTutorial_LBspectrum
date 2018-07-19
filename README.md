@@ -20,7 +20,7 @@ I recommend to read the included documents in the following order:
 ## Working with data
 12. [MLP - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)
 13. [1D CNN - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/1D%20CNN%20with%20LB%20spectrum.ipynb)
-14. 2D CNN - Gender Classification
+14. [2D CNN - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/2D%20CNN%20with%20LB%20spectrum.ipynb)
 
 # Sources and Useful Resources
 
