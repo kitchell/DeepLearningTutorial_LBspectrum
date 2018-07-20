@@ -94,9 +94,12 @@ validator = RandomSearchCV(my_classifier,
 There is a package called [Hyperas](http://maxpumperla.com/hyperas/) that combines another package called [Hyperopt](http://hyperopt.github.io/hyperopt/) and Keras for fast hyperparameter optimization.
 
 
-### useful resources
+### Useful resources
 http://neupy.com/2016/12/17/hyperparameter_optimization_for_neural_networks.html
 
 https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london2017/4.%20HyperParameter%20Tuning.ipynb
 
 http://scikit-learn.org/stable/modules/grid_search.html
+
+
+Please move on to the **Working with Data** portion: [MLP with LB Spectrum](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)
