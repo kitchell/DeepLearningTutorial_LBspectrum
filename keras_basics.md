@@ -132,7 +132,7 @@ from keras.utils import to_categorical
 train_labels = to_categorical(train_labels)
 ```
 
-When setting up the shape of your input data, the first axis is generally the 'samples' axis. It should be equal to the number of samples in your data. The other values represent the shape of the samples. Example of a data set with 60,000 samples and each sample is a 28 by 28 matrix. 
+When setting up the shape of your input data, the first axis is generally the 'samples' axis. It should be equal to the number of samples in your data. The other values represent the shape of the samples. Example of a data set with 60,000 samples and each sample is a 28 by 28 matrix: 
 ```python
 print(train_images.shape)
 (60000, 28, 28)
