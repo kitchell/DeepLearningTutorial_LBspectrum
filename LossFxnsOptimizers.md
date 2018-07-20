@@ -13,7 +13,7 @@ There are some simple guidlines for choosing the correct loss function:
 
 **binary crossentropy** (`binary_crossentropy`) is used when you have a two-class, or binary, classification problem. 
 
-**categorical crossentropy** (`categorical_crossentropy`) is uses for a multi-class classification problem. 
+**categorical crossentropy** (`categorical_crossentropy`) is used for a multi-class classification problem. 
 
 **mean squared error** (`mean_squared_error`) is used for a regression problem. 
 
