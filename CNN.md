@@ -96,7 +96,7 @@ keras.layers.GlobalAveragePooling2D(data_format=None)
 The argument we care about is:
 * pool_size - size of the window to 'summarize'
 
-Note that the Global pooling layers do not have any input functions (except data_format for the 2D ones).
+Note that the Global pooling layers do not have any input arguments (except data_format for the 2D ones).
 
 Please see the Keras documentation for arguments not covered here. 
 
@@ -143,7 +143,7 @@ from keras.layers import Conv1D, GlobalAveragePooling1D, MaxPooling1D
 seq_length = 64
 model = Sequential()
 ```
-3. Add the first layer. This is a 1D convolutional layer. This layer is using 64 filters (kernels) and a kernel size of 3. We set the activation function we want to apply after the convolution to 'relu' - this defines the ReLU layer. Because it is the first layer we have to define the input shape of the data, this can be a little tricky. The 1D conv function was designed to work with sequential data, so the order of the values can be confusing. The first number represents the number of 'time steps' you have, in this case 64. The second number represents the number of features you have measures for for each time step, in this case 100. When you have a single vector of data per input (e.g. an LB spectrum with 50 eigenvalues), you likely want this shape to be (50, 1).
+3. Add the first layer. This is a 1D convolutional layer. This layer is using 64 filters (kernels) and a kernel size of 3. We set the activation function we want to apply after the convolution to 'relu' - this defines the ReLU layer. Because it is the first layer we have to define the input shape of the data, this can be a little tricky. The 1D conv function was designed to work with sequential data, so the order of the values can be confusing. The first number represents the number of 'time steps' you have, in this case 64. The second number represents the number of features you have measures for for each time step, in this case 100. When you have a single vector of data per input (e.g. an LB spectrum with 50 eigenvalues), you likely want the last value to be 1 (ex. shape would be (50, 1)).
 ```python
 model.add(Conv1D(64, 3, activation='relu', input_shape=(seq_length, 100)))
 ```
