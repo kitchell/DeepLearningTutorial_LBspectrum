@@ -1,6 +1,6 @@
-# Regularizaiton
+# Regularization
 
-We have already learning that overfitting is when the model becomes too specific and too well trained to the training data. One way this is avoided is by validating and testing the network on new data the model has not see before. There are a few additional ways we can prevent overfitting. One way is to modulate the amount of information the model model is allowed to store. If the model can only learned a small number of patters, the optimization process will force it to focus on the most important patterns. This process is called **regularization**. 
+We have already learning that overfitting is when the model becomes too specific and too well trained to the training data. One way this is avoided is by validating and testing the network on new data the model has not see before. There are a few additional ways we can prevent overfitting. One way is to modulate the amount of information the model model is allowed to store. If the model can only learned a small number of patterns, the optimization process will force it to focus on the most important patterns. This process is called **regularization**. 
 
 The most common methods of regularization include:
 
