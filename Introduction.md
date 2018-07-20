@@ -20,14 +20,14 @@ We will be using supervised learning for the task of classification.
 
 ### Deep learning
 
-Deep learning is a subset of machine learning methods that use artifical neural networks. It is somewhat inspired by the structure of the neurons of the brain. The "Deep" in deep learning refers to the multiple hidden layers of the neural networks. Deep learning has had great success with several domains, such as images, text, speech, and video. There are many different types of neural networks. We will focus on the following:
+Deep learning is a subset of machine learning methods that use artificial neural networks. It is somewhat inspired by the structure of the neurons of the brain. The "deep" in deep learning refers to the multiple hidden layers of the neural networks. Deep learning has had great success with several domains, such as images, text, speech, and video. There are many different types of neural networks. We will focus on the following two:
 
 1. Multi-layer Perceptron (Fully connected network)
 2. Convolutional Neural Network
 
 
 ## Why use deep learning?
-Deep learning is most appropriate when there are very complex patterns in the data you want classified (and also lots of data). In the case of the Laplace Beltrami (LB) spectrum, the data is a vector of numbers (eigenvalues) which represent the shape of an object. The more similar the vectors of objects are, the more similar the shapes of the objects are. Some simple machine learning algorithms perform well when classifying individuals based on the LB spectrum of different areas of their brains, but we are curious if neural networks will perform better as it is likely that the pattern of eigenvalues that best discriminates between subject groups is complicated. It is possible, however, that the amount of data we have per classification class is not enough for neural networks to do a good enough job.    
+Deep learning is most appropriate when there are very complex patterns in the data you want classified (and also lots of data). In the case of the Laplace Beltrami (LB) spectrum, the data is a vector of numbers (eigenvalues) which represent the shape of an object. The more similar the vectors of objects are, the more similar the shapes of the objects are. Some simple machine learning algorithms perform well when classifying individuals based on the LB spectrum of different areas of their brains, but we are curious if neural networks will perform better as it is likely that the pattern of eigenvalues that best discriminates between groups of subjects (e.g. males vs females, healthy controls vs neurological disorder) is complicated. It is possible, however, that the amount of data we have per classification class is not enough for neural networks to do a good enough job.    
 
 ## Perceptrons
 To begin to understand neural networks we should understand what a perceptron is. A perceptron is a basic artificial neuron. It takes in multiple binary inputs and produces a single binary output. The inputs are given weights and the output is determined by whether the sum of the input weights are over or under a certain threshold. Essentially, it is a device that makes decisions by weighing all the evidence. 
@@ -52,7 +52,7 @@ The number of nodes in the input layer is determined by the number of inputs. Fo
 
 ### Output layer
 
-The number of nodes in the output layer is determined by the number of categories the inputs are being classified into. If it is a binary classification (2 options), the output layer has 1 node (the options are 0 or 1). If there are 5 possibly categories, there are 5 nodes. 
+The number of nodes in the output layer is determined by the number of categories the inputs are being classified into. If it is a binary classification (2 options), the output layer has 1 node (the options are 0 or 1). If there are 5 possible categories, there are 5 nodes. 
 
 ### Hidden layers
 
