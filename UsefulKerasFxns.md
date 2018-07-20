@@ -105,7 +105,7 @@ keras.callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=0, save_be
 best_model = ModelCheckpoint(fBestModel, verbose=0, save_best_only=True)
 best_model = ModelCheckpoint(fBestModel, monitor='val_acc', save_best_only=True, mode='max')
 ```
-The model checkpoint callback stores the model after every epoch. It can also be set to save the the best model found during the epochs. 
+The model checkpoint callback stores the model after every epoch. It can also be set to save only the best model found during the epochs. 
 
 ### TensorBoard
 ```python
