@@ -21,6 +21,8 @@ I recommend to read the included documents in the following order:
 12. [MLP - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)
 13. [1D CNN - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/1D%20CNN%20with%20LB%20spectrum.ipynb)
 14. [2D CNN - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/2D%20CNN%20with%20LB%20spectrum.ipynb)
+15. [MLP - Multi-Class Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Multi-Class%20Classification%20MLP.ipynb)
+16. [1D CNN - Multi-Class Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Multi-Class%20Classification%201D%20CNN.ipynb)
 
 # Sources and Useful Resources
 
