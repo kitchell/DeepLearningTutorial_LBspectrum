@@ -18,6 +18,9 @@ I recommend to read the included documents in the following order:
 11. [Hyperparameter Tuning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/HyperparamTuning.md)
 
 ## Working with data
+
+If the links below will not load, please copy the URL and paste it into this site - https://nbviewer.jupyter.org/
+
 12. [MLP - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)
 13. [1D CNN - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/1D%20CNN%20with%20LB%20spectrum.ipynb)
 14. [2D CNN - Gender Classification](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/2D%20CNN%20with%20LB%20spectrum.ipynb)
