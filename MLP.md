@@ -199,4 +199,4 @@ score = model.evaluate(x_test, y_test, batch_size=128)
 
 That's it! You now know the basic requirements of an MLP in Keras. Essentially, you need a dense input layer, some dense hidden layers (with or without dropout), and a dense output layer. 
 
-Please continue on to [Convolutional Neural Networks](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/CNN.md).
+**Please continue on to [Convolutional Neural Networks](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/CNN.md).**
