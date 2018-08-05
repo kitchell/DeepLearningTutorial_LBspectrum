@@ -69,7 +69,7 @@ One-hot encoding would change the represention from 1 and 2 to `male = [1, 0]` a
 Another example: If you had five categories: `[A, B, C, D, E]`, a sample belonging to category 'C' would be represented by `[0, 0, 1, 0, 0]`, a sample belonging to category A would be represented by `[1, 0, 0, 0, 0]`. 
 
 
-Please continue on to the [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md). Keras is the python library we will be using to create neural networks.
+**Please continue on to the [Introduction to Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/keras_basics.md). Keras is the python library we will be using to create neural networks.**
 
 
 Figures are from this very helpful resource: http://neuralnetworksanddeeplearning.com/
