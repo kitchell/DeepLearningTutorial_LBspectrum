@@ -142,4 +142,4 @@ You may need to rearrange your input data into a new shape. This can be done wit
 ```python
 train_images = train_images.reshape((60000, 28 * 28))
 ```
-Please continue on to [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md).
+**Please continue on to [Multi-layer Perceptrons in Keras](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP.md).**
