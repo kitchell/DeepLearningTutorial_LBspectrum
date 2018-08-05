@@ -57,4 +57,4 @@ model.add(layers.Dropout(0.5))
 http://nbviewer.jupyter.org/github/fchollet/deep-learning-with-python-notebooks/blob/master/4.4-overfitting-and-underfitting.ipynb
 
 
-Please move on to [Hyperparameter Tuning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/HyperparamTuning.md).
+**Please move on to [Hyperparameter Tuning](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/HyperparamTuning.md).**
