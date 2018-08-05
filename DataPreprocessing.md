@@ -49,5 +49,5 @@ X_normalized = scaler.fit_transform(X)
 ```
 
 
-Please continue on to [Regularization](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Regularization.md).
+**Please continue on to [Regularization](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/Regularization.md).**
 
