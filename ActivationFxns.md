@@ -31,4 +31,4 @@ The rectified linear unit (ReLU) function is one of the most popular activation 
 
 The softmax function is useful when doing multi-class classification. It is typically only used with the output layer. It is a type of sigmoid function and it 'squashes' the outputs for each class between 0 and 1 and divides by the sum of the outputs. It essentially gives the probability of the input being in a particular class. Its mathematical function is: ![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/10/17014509/softmax.png). 
 
-Please continue on to [Other Useful Keras Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/UsefulKerasFxns.md). 
+**Please continue on to [Other Useful Keras Functions](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/UsefulKerasFxns.md).**
