@@ -7,7 +7,7 @@ Activation functions are what decide whether a neuron should be activated or not
 * [another useful resource and source of the images used below](http://cs231n.github.io/neural-networks-1/#actfun)
 * [yet another useful resource](http://cs231n.github.io/neural-networks-1/#actfun)
 
-There are many possible input functions. See the [Keras documentation for a list of all of them](https://keras.io/activations/). The most commonly used functions are Sigmoid, Tanh, ReLU, and softmax. 
+There are many possible activation functions. See the [Keras documentation for a list of all of them](https://keras.io/activations/). The most commonly used functions are Sigmoid, Tanh, ReLU, and softmax. 
 
 ## Sigmoid
 
