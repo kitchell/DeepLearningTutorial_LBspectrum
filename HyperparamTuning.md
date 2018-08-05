@@ -102,4 +102,4 @@ https://github.com/leriomaggio/deep-learning-keras-tensorflow/blob/pydata-london
 http://scikit-learn.org/stable/modules/grid_search.html
 
 
-Please move on to the **Working with Data** portion: [MLP with LB Spectrum](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)
+**Please move on to the *Working with Data* portion: [MLP with LB Spectrum](https://github.com/kitchell/DeepLearningTutorial_LBspectrum/blob/master/MLP%20with%20LB%20spectrum.ipynb)**
