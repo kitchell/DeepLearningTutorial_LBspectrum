@@ -1,6 +1,6 @@
 # Activation Functions
 
-Activation functions are what decide whether a node should be activated or not. It is the non linear transformation that is done over the input signal. This transformed output is then sent to the next layer of neurons as input.
+Activation functions are what decide whether a node should be activated or not. It is the non linear transformation that is done over the input signal. This transformed output is then sent to the next layer of nodes as input.
 
 * [useful resource](https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0)
 * [another useful resource](https://www.analyticsvidhya.com/blog/2017/10/fundamentals-deep-learning-activation-functions-when-to-use-them/)
